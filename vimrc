@@ -15,14 +15,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
+Plugin 'junegunn/goyo.vim'
 call vundle#end()
 filetype plugin indent on
 " End Vundle shit.
 
 " TODO: Make this work with s:editor_root
-"source s:editor_root . '/autoclose.vim'
-source ~/.vim/tex_autoclose.vim
-source ~/.vim/autoclose.vim
+exec "source " . s:editor_root . '/autoclose.vim'
+exec "source " . s:editor_root . '/tex_autoclose.vim'
 
 " QUIT INSERTING COMMENTS!
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -92,7 +92,7 @@ inoremap jk <ESC>
 " Read ':help fo-table'
 set formatoptions=tcn2l
 
-fun! MakeColorColumn()
+function! MakeColorColumn()
     " Don't do dis on .tex files.
     if &ft =~ 'tex'
         return
@@ -102,8 +102,8 @@ fun! MakeColorColumn()
     highlight ColorColumn ctermbg=7
     " Set textwidth to enforce it!
     set textwidth=89
-endfun
+endfunction
 
 autocmd BufNewFile,BufRead * call MakeColorColumn() 
 
-colorscheme default
+colorscheme mod8

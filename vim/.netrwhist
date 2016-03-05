@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/doobs/Web-Dev/boot-camp/src'
+let g:netrw_dirhist_2='/home/doobs/IdeaProjects/p3-yandusaurus/src'
+let g:netrw_dirhist_3='/home/doobs/IdeaProjects/p3-yandusaurus/src/chess'
+let g:netrw_dirhist_4='/home/doobs/IdeaProjects/p3-yandusaurus/src/chess/bots'
