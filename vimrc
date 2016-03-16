@@ -16,13 +16,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'junegunn/goyo.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 call vundle#end()
 filetype plugin indent on
 " End Vundle shit.
 
-" TODO: Make this work with s:editor_root
-exec "source " . s:editor_root . '/autoclose.vim'
-exec "source " . s:editor_root . '/tex_autoclose.vim'
+" exec "source " . s:editor_root . '/autoclose.vim'
+" exec "source " . s:editor_root . '/tex_autoclose.vim'
 
 " QUIT INSERTING COMMENTS!
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -48,9 +49,9 @@ set nosmartindent
 
 " Space is your leader.
 let mapleader = " "
-" [D]eletes a whole line.
+" [d]eletes a whole line.
 nnoremap <Leader>d dd
-" [C]hange whole line.
+" [c]hange whole line.
 nnoremap <Leader>c cc
 " Faster [w]riting/saving.
 nnoremap <Leader>w :w<CR>
@@ -73,6 +74,8 @@ nnoremap <Leader>4 :buffer 4<CR>
 nnoremap <Leader>5 :buffer 5<CR>
 " Remove pesky search highlighting.
 nnoremap <silent> <Leader><Leader> :nohlsearch<cr>
+" Quicker fold toggling. Besides, who uses the tab key.
+nnoremap <tab> za 
 
 " Split maneuvering.
 nnoremap <C-J> <C-W><C-J>
@@ -106,4 +109,5 @@ endfunction
 
 autocmd BufNewFile,BufRead * call MakeColorColumn() 
 
-colorscheme mod8
+" colorscheme mod8
+colorscheme desert
