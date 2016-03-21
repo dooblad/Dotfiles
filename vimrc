@@ -62,8 +62,10 @@ nnoremap <Leader>j }
 nnoremap <Leader>k {
 nnoremap <Leader>h ^
 nnoremap <Leader>l $
+
 " For [L]aTeX compiling on the current file.
 "nnoremap <Leader>l :w <bar> !pdflatex %<CR>
+
 " [R]eload .vimrc.
 nnoremap <Leader>r :source ~/.vimrc<CR>
 " Switch to buffer [1]-[5]
