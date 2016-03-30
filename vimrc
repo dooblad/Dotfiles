@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 call vundle#end()
@@ -111,5 +112,9 @@ endfunction
 
 autocmd BufNewFile,BufRead * call MakeColorColumn() 
 
-" colorscheme mod8
-colorscheme desert
+" Enable Limelight whenever Goyo is used.
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+colorscheme mod8
+" colorscheme desert
