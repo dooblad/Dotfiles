@@ -1,0 +1,35 @@
+{
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "48": "icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqEqQAzSbD3z+YlP7/d7Xn/XhaRgy05/Fw6aSUDRQ96f7E9FvN1g9BsQUlyz3pf8VI8G/l8et1iRKh1k0yljW3zbrQffMW1e/h8PSERofWM2Va9ZmKSXNVqIXPjM7ZPgUqdrfOUTfs8ZP8BWJJPYWjjnrZ8cbo+EvU+O/2W9oK6QwfxkkpWBaRSrNcDNZcEAud33XzU1f0E+19WTayxKATvZqcmw5isazChgGUdVqDSeuGShS6vNLNwZyMpHBMQon3bP1RRjlMRiHU4tDSlur7mjfuC/l7dqEiyuwNpmsZTI+ODxXeAf3HwL4w6smiFOsftltSCsqsfPxBcQ+dnqENQIDAQAB",
+   "manifest_version": 2,
+   "name": "Material Simple Grey",
+   "theme": {
+      "colors": {
+         "bookmark_text": [ 30, 30, 30 ],
+         "frame": [ 50, 50, 50 ],
+         "frame_inactive": [ 50, 50, 50 ],
+         "ntp_header": [ 50, 50, 50 ],
+         "ntp_link": [ 36, 70, 0 ],
+         "ntp_section": [ 50, 50, 50 ],
+         "ntp_text": [ 20, 40, 0 ],
+         "tab_background_text": [ 180, 180, 180 ],
+         "toolbar": [ 239, 239, 239 ]
+      },
+      "images": {
+         "theme_frame": "theme_frame.png",
+         "theme_frame_inactive": "theme_frame_inactive.png",
+         "theme_tab_background": "theme_tab_background.png",
+         "theme_tab_background_inactive": "theme_tab_background_inactive.png",
+         "theme_toolbar": "theme_toolbar.png"
+      },
+      "tints": {
+         "buttons": [ 0.33, 0.5, 0.47 ]
+      }
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0"
+}

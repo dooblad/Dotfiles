@@ -1,0 +1,256 @@
+{
+   "checksum": "2d43b38ba41340c57b5791b948a44942",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13076287466302241",
+            "id": "10",
+            "meta_info": {
+               "stars.flags": "5",
+               "stars.id": "ssc_fa6c2dc467822537",
+               "stars.version": "sync.server.Chrome42"
+            },
+            "name": "Bookmarks",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "chrome://bookmarks/"
+         }, {
+            "date_added": "13057355015417771",
+            "id": "11",
+            "name": "Katamari!",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "javascript:var%20i,s,ss=['http://kathack.com/js/kh.js','http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'];for(i=0;i!=ss.length;i++){s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);"
+         }, {
+            "date_added": "12998727790801680",
+            "id": "12",
+            "meta_info": {
+               "stars.flags": "6",
+               "stars.id": "ssc_29ddf3a3c6cc05ce",
+               "stars.imageData": "Cg56aTY5MGdYeWhhcnpwTRIpCiFodHRwOi8vaTU2LnRpbnlwaWMuY29tL3JjMW9hcy5qcGcQ4wIYjgEaYwpbaHR0cDovL3QyLmdzdGF0aWMuY29tL2ltYWdlcz9xPXRibjpBTmQ5R2NUWTFmUHJCR1pRRmpiQ2JwVU1tRUE2VEc0RGc4dWNtOU9GVDZ2TVd0UWJDNzVLNnlxYRDjAhiOASIfCAEQ4wIYjgEgyDZCBhIEBAH/fUoKaW1hZ2UvanBlZw==",
+               "stars.pageData": "Ig5Cck11MlM5T1FDVkhBTQ==",
+               "stars.version": "sync.server.Chrome42"
+            },
+            "name": "Play asteroids on any website you are one.",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.game-tuts.com/community/f65/play-asteroids-any-website-you-one-70507/"
+         }, {
+            "date_added": "13027734239174000",
+            "id": "13",
+            "meta_info": {
+               "stars.flags": "6",
+               "stars.id": "ssc_4eb46a404b1f05a6",
+               "stars.imageData": "Cg5BME44NU9PVy1VeGxmTRI4CjFodHRwOi8vd3d3Lm9wZW5nbC5vcmcvc2RrL2luYy9pbWcvb3BlbmdsX2xvZ28uanBnELABGE0aYgpbaHR0cDovL3QzLmdzdGF0aWMuY29tL2ltYWdlcz9xPXRibjpBTmQ5R2NSdjA5M0VVbzdUUzNISmJQU0VaRGQtNXFJcDhCZnJIYzE4SzMxal9wdkkyd1o2SEJhchCwARhNIg8IARCwARhNQgYSBIAEAAAo8IC0ip7bxQI=",
+               "stars.pageData": "Ig5vb01Yc2QtbW1PdnlmTQ==",
+               "stars.type": "2"
+            },
+            "name": "OpenGL 2.1 Reference Pages",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.opengl.org/sdk/docs/man/"
+         }, {
+            "date_added": "12988456554140102",
+            "id": "14",
+            "name": "Fabien Sanglard's website: Deep magic explained.",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://fabiensanglard.net/"
+         }, {
+            "date_added": "13027734239174000",
+            "id": "15",
+            "meta_info": {
+               "stars.id": "ssc_4f24cd6680dcab17",
+               "stars.imageData": "Cg5QM1hnclBNWUJyQXFjTRIkChxodHRwOi8vczAud3AuY29tL2kvYmxhbmsuanBnEMgBGMgBGmMKW2h0dHA6Ly90My5nc3RhdGljLmNvbS9pbWFnZXM/cT10Ym46QU5kOUdjU0dVRkVCNTdXR29kYVp1WkhsWjd2aUhEall6X245NVhqLVJGYmxzRF9QSGxZVFdIZ1EQoAEYoAEiEAgBEKABGKABQgYSBIACAP8o97jQqaHhxQI=",
+               "stars.pageData": "EiNXaGVuIEkgZ3JvdyB1cCBJJ2xsIGJlIGFuIGludmVudG9yLiIOMWtoMWVETzRhYXI1SU0=",
+               "stars.type": "2",
+               "stars.version": "sync.server.Chrome46"
+            },
+            "name": "The ryg blog",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://fgiesen.wordpress.com/"
+         }, {
+            "date_added": "13072083102196942",
+            "id": "16",
+            "meta_info": {
+               "stars.flags": "5",
+               "stars.id": "ssc_2c469a5d3e3db52f",
+               "stars.version": "sync.server.Chrome41"
+            },
+            "name": "Archives | Cup Full of Code",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://cupfullofcode.com/archives/"
+         }, {
+            "date_added": "13091932881677012",
+            "id": "17",
+            "meta_info": {
+               "stars.id": "ssc_32babea7b7cc7779",
+               "stars.isSynced": "true"
+            },
+            "name": "sleepyti.me bedtime calculator",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://sleepyti.me/"
+         }, {
+            "date_added": "13034299275000000",
+            "id": "18",
+            "name": "Teaching and Learning",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.washington.edu/itconnect/learn/"
+         }, {
+            "date_added": "12993867431000000",
+            "id": "19",
+            "name": "Employment",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.washington.edu/lst/about/jobs"
+         }, {
+            "date_added": "12993867423000000",
+            "id": "20",
+            "name": "Tech Spaces",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.washington.edu/lst/technology_spaces/computing_commons"
+         }, {
+            "date_added": "13034299305000000",
+            "id": "21",
+            "name": "Help Desk",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.washington.edu/itconnect/learn/help-desk/"
+         }, {
+            "date_added": "13034299719000000",
+            "id": "22",
+            "name": "Workshops",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.washington.edu/itconnect/learn/workshops/"
+         }, {
+            "date_added": "12993867470000000",
+            "id": "23",
+            "name": "Catalyst",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://catalyst.uw.edu/"
+         }, {
+            "date_added": "13009505436000000",
+            "id": "24",
+            "name": "Canvas",
+            "sync_transaction_version": "6",
+            "type": "url",
+            "url": "https://canvas.uw.edu/"
+         }, {
+            "date_added": "13053130605949393",
+            "id": "25",
+            "name": "Panopto",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://panopto.uw.edu/"
+         }, {
+            "date_added": "12993867322000000",
+            "id": "26",
+            "name": "MyUW",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://myuw.washington.edu/"
+         }, {
+            "date_added": "12993867304000000",
+            "id": "27",
+            "name": "Time Schedule",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "https://www.washington.edu/students/timeschd/"
+         }, {
+            "date_added": "12993867291000000",
+            "id": "28",
+            "name": "IT Connect",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.washington.edu/itconnect/"
+         }, {
+            "date_added": "12993867257000000",
+            "id": "29",
+            "name": "UW Home",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.washington.edu/"
+         }, {
+            "date_added": "12993867233000000",
+            "id": "30",
+            "name": "UW Libraries",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.lib.washington.edu/"
+         }, {
+            "date_added": "13095069528585141",
+            "id": "31",
+            "name": "VIM and Python - a match made in heaven - Real Python",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/"
+         }, {
+            "date_added": "13098747501107449",
+            "id": "32",
+            "name": "Programming Principles",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "https://webpro.github.io/programming-principles/"
+         } ],
+         "date_added": "13103766589179424",
+         "date_modified": "13104179309857736",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "children": [ {
+               "date_added": "12998727790807680",
+               "id": "8",
+               "name": "TabJump Settings",
+               "sync_transaction_version": "1",
+               "type": "url",
+               "url": "chrome-extension://hokofmgcicpnjchllaccgedmmmbbnbmf/options.html"
+            }, {
+               "date_added": "12998727790807680",
+               "id": "9",
+               "name": "YouTube - Tutorial:How To Get Free XBLA Games 102+ more ( NEW MIC)",
+               "sync_transaction_version": "1",
+               "type": "url",
+               "url": "http://www.youtube.com/watch?v=wLyBl0mPP98&feature=related"
+            } ],
+            "date_added": "13103766836621719",
+            "date_modified": "13103766836621719",
+            "id": "6",
+            "name": "Extension Settings",
+            "sync_transaction_version": "1",
+            "type": "folder"
+         }, {
+            "date_added": "12998727790807680",
+            "id": "7",
+            "name": "YouTube - ‪Java Programming Tutorial - 57 - Overriding Rules‬‏",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://www.youtube.com/watch?v=zN9pKULyoj4&NR=1&feature=fvwp"
+         } ],
+         "date_added": "13103766589179432",
+         "date_modified": "12998727790807680",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "sync_transaction_version": "6",
+      "synced": {
+         "children": [  ],
+         "date_added": "13103766589179433",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

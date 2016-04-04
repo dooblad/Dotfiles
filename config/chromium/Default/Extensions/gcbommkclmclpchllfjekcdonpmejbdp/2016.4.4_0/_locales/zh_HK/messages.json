@@ -1,0 +1,152 @@
+{
+    "about_and": {
+        "message": "\uff0c\u4ee5\u53ca"
+    }, 
+    "about_created_by": {
+        "message": "\u5236\u4f5c\u4eba\uff1a"
+    }, 
+    "about_donate_eff": {
+        "message": "\u6350\u6b3e\u7d66\u96fb\u5b50\u524d\u54e8\u57fa\u91d1\u6703"
+    }, 
+    "about_donate_tor": {
+        "message": "\u6350\u6b3e\u7d66Tor"
+    }, 
+    "about_ext_description": {
+        "message": "\u5c07\u4e92\u806f\u7db2\u52a0\u5bc6! \u81ea\u52d5\u5728\u5927\u90e8\u7db2\u7ad9\u4f7f\u7528HTTPS\u9023\u7dda\u3002"
+    }, 
+    "about_ext_name": {
+        "message": "\u300c\u5230\u8655HTTPS\u300d"
+    }, 
+    "about_librarians": {
+        "message": "\u898f\u5247\u7ba1\u7406\u54e1"
+    }, 
+    "about_many_contributors": {
+        "message": "\u8a31\u591a\u8ca2\u737b\u8005\uff0c\u5305\u62ec"
+    }, 
+    "about_noscript": {
+        "message": "\u4e26\u4e14\uff0c\u5230\u8655HTTPS\u6709\u90e8\u4efd\u7684\u7a0b\u5f0f\u78bc\u662f Giorgio Maone \u548c\u5176\u4ed6\u4eba\u5f9e NoScript \u88e1\u79fb\u690d\u4e26\u4fee\u6539\u800c\u4f86\u7684\uff0c\u6211\u5011\u975e\u5e38\u5730\u611f\u8b1d\u4ed6\u5011\u5982\u6b64\u5091\u51fa\u7684\u8ca2\u737b\uff01"
+    }, 
+    "about_or": {
+        "message": "\u6216"
+    }, 
+    "about_thanks": {
+        "message": "\u591a\u8b1d"
+    }, 
+    "about_title": {
+        "message": "\u95dc\u65bc \u300c\u5230\u8655HTTPS\u300d"
+    }, 
+    "about_tor_lang_code": {
+        "message": "\u82f1\u6587"
+    }, 
+    "about_version": {
+        "message": "\u7248\u672c"
+    }, 
+    "chrome_add_new_rule": {
+        "message": "Add a new rule for this site"
+    }, 
+    "chrome_add_rule": {
+        "message": "Add a rule for this site"
+    }, 
+    "chrome_always_https_for_host": {
+        "message": "Always use https for this host"
+    }, 
+    "chrome_experimental_rules": {
+        "message": "\u5be6\u9a57\u6027\u898f\u5247"
+    }, 
+    "chrome_experimental_rules_description": {
+        "message": "\u53ef\u80fd\u6703\u5c0e\u81f4\u8b66\u544a\u548c\u932f\u8aa4\uff0c\u9810\u8a2d\u70ba\u95dc\u9589\u3002"
+    }, 
+    "chrome_hide_advanced": {
+        "message": "Hide advanced"
+    }, 
+    "chrome_host": {
+        "message": "Host:"
+    }, 
+    "chrome_redirect_to": {
+        "message": "Redirect to"
+    }, 
+    "chrome_regex": {
+        "message": "Matching regex"
+    }, 
+    "chrome_rule_name": {
+        "message": "Rule name"
+    }, 
+    "chrome_show_advanced": {
+        "message": "Show advanced"
+    }, 
+    "chrome_stable_rules": {
+        "message": "\u7a69\u5b9a\u898f\u5247"
+    }, 
+    "chrome_stable_rules_description": {
+        "message": "\u5728\u4ee5\u4e0b\u7db2\u7ad9\u5f37\u5236\u4f7f\u7528\u52a0\u5bc6\u9023\u7dda\uff1a"
+    }, 
+    "chrome_status_cancel_button": {
+        "message": "\u53d6\u6d88"
+    }, 
+    "menu_about": {
+        "message": "\u95dc\u65bc\u300c\u5230\u8655HTTPS\u300d"
+    }, 
+    "menu_blockHttpRequests": {
+        "message": "\u5c01\u9396\u6240\u6709HTTP\u8981\u6c42"
+    }, 
+    "menu_donate_eff_imperative": {
+        "message": "Donate to EFF"
+    }, 
+    "menu_globalDisable": {
+        "message": "\u505c\u7528\u5230\u8655HTTPS"
+    }, 
+    "menu_globalEnable": {
+        "message": "\u555f\u7528\u5230\u8655HTTPS"
+    }, 
+    "menu_observatory": {
+        "message": "SSL \u89c0\u6e2c\u7ad9\u8a2d\u5b9a"
+    }, 
+    "menu_showCounter": {
+        "message": "\u986f\u793a\u8a08\u6578\u5668"
+    }, 
+    "menu_viewAllRules": {
+        "message": "\u6aa2\u8996\u6240\u6709\u898f\u5247"
+    }, 
+    "prefs_disable_all": {
+        "message": "\u505c\u7528\u6240\u6709"
+    }, 
+    "prefs_enable_all": {
+        "message": "\u555f\u7528\u6240\u6709"
+    }, 
+    "prefs_enabled": {
+        "message": "\u5df2\u555f\u7528"
+    }, 
+    "prefs_here_link": {
+        "message": "\u9019\u88e1"
+    }, 
+    "prefs_list_caption": {
+        "message": "\u8981\u5957\u7528\u54ea\u4e9b HTTPS \u91cd\u65b0\u5c0e\u5411\u898f\u5247\uff1f"
+    }, 
+    "prefs_notes": {
+        "message": "\u7b46\u8a18"
+    }, 
+    "prefs_reset_default": {
+        "message": "\u91cd\u8a2d\u81f3\u9810\u8a2d\u503c"
+    }, 
+    "prefs_reset_defaults": {
+        "message": "\u6062\u5fa9\u539f\u672c\u8a2d\u5b9a"
+    }, 
+    "prefs_ruleset_howto": {
+        "message": "\u4f60\u53ef\u4ee5\u5b78\u7fd2\u81ea\u884c\u7de8\u5beb\u898f\u5247(\u4ee5\u652f\u63f4\u5176\u4ed6\u7db2\u7ad9)"
+    }, 
+    "prefs_search": {
+        "message": "\u5c0b\u627e"
+    }, 
+    "prefs_site": {
+        "message": "\u7db2\u7ad9"
+    }, 
+    "prefs_title": {
+        "message": "\u300c\u5230\u8655HTTPS\u300d \u8a2d\u5b9a"
+    }, 
+    "prefs_toggle": {
+        "message": "\u5207\u63db"
+    }, 
+    "prefs_view_xml_source": {
+        "message": "\u6aa2\u8996XML\u539f\u59cb\u78bc"
+    }
+}

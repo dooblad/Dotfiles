@@ -1,0 +1,9 @@
+2016/03/29-16:14:04.604 432 Reusing MANIFEST /home/doobs/.config/chromium/Default/IndexedDB/http_www.chromeactions.com_0.indexeddb.leveldb/MANIFEST-000001
+2016/03/29-16:14:04.995 432 Current memtable full; waiting...
+2016/03/29-16:14:04.995 1816 Level-0 table #5: started
+2016/03/29-16:14:05.071 1816 Level-0 table #5: 399 bytes OK
+2016/03/29-16:14:05.197 1816 Delete type=0 #3
+2016/03/29-16:14:05.198 1816 Level-0 table #7: started
+2016/03/29-16:14:05.198 1816 Level-0 table #7: 0 bytes OK
+2016/03/29-16:14:05.309 1816 Delete type=0 #4
+2016/03/29-16:14:05.309 1816 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

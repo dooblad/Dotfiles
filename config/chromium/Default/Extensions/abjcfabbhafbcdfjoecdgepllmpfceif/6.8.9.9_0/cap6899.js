@@ -1,0 +1,3 @@
+// Extension for Chrome Browser - Magic Actions for YouTube™ - CHROMEACTIONS.COM - Copyright 2016 Vlad and Serge Strukoff - All Rights Reserved
+"complete"==document.readyState?cap():window.addEventListener("load",cap,!1);
+function cap(){function c(a){var b;b=a?a:{w:640,h:350,vid:"pwHX9JT2APQ",lic:"YouTube License",t:"Magic Actions for YouTube\u2122"};b.ver="6.8.9.9";b.ua=1;b.id=12;a=new XMLHttpRequest;a.open("GET",b.rgba,!0);a.responseType="arraybuffer";a.onload=function(a){200==this.status&&(b.rgba=this.response,console.log(b),window.postMessage(b,document.location.protocol+"//www.chromeactions.com"))};a.send()}chrome.runtime.sendMessage('{"id":9}',c);chrome.runtime.onMessage.addListener(c)};

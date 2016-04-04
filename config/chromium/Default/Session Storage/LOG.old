@@ -1,0 +1,12 @@
+2016/04/04-09:48:40.320 865 Reusing MANIFEST /home/doobs/.config/chromium/Default/Session Storage/MANIFEST-000001
+2016/04/04-09:48:40.320 865 Recovering log #68
+2016/04/04-09:48:40.523 865 Reusing old log /home/doobs/.config/chromium/Default/Session Storage/000068.log 
+2016/04/04-09:50:05.913 1904 Level-0 table #73: started
+2016/04/04-09:50:06.009 1904 Level-0 table #73: 1621047 bytes OK
+2016/04/04-09:50:06.054 1904 Delete type=0 #68
+2016/04/04-10:34:58.850 1904 Compacting 1@1 + 1@2 files
+2016/04/04-10:34:58.940 1904 Generated table #74: 152 keys, 253950 bytes
+2016/04/04-10:34:58.940 1904 Compacted 1@1 + 1@2 files => 253950 bytes
+2016/04/04-10:34:58.973 1904 compacted to: files[ 0 0 1 0 0 0 0 ]
+2016/04/04-10:34:58.973 1904 Delete type=2 #70
+2016/04/04-10:34:58.974 1904 Delete type=2 #73

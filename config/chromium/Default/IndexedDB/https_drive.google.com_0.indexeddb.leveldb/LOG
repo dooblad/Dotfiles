@@ -1,0 +1,59 @@
+2016/04/04-10:28:33.562 669 Reusing MANIFEST /home/doobs/.config/chromium/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2016/04/04-10:28:33.562 669 Recovering log #24
+2016/04/04-10:28:33.749 669 Level-0 table #29: started
+2016/04/04-10:28:34.063 669 Level-0 table #29: 11237488 bytes OK
+2016/04/04-10:28:34.132 669 Delete type=0 #24
+2016/04/04-10:28:35.023 669 Current memtable full; waiting...
+2016/04/04-10:28:35.023 2862 Level-0 table #32: started
+2016/04/04-10:28:35.057 2862 Level-0 table #32: 409 bytes OK
+2016/04/04-10:28:35.102 2862 Delete type=0 #30
+2016/04/04-10:28:35.102 2862 Level-0 table #34: started
+2016/04/04-10:28:35.103 2862 Level-0 table #34: 0 bytes OK
+2016/04/04-10:28:35.171 2862 Delete type=0 #31
+2016/04/04-10:28:35.171 2862 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at '\x00\x02\x01\x02\x01\x18\x001\x002\x003\x003\x001\x006\x001\x006\x002\x009\x004\x005\x007\x009\x003\x004\x003\x006\x001\x005\x00_\x001\x00_\x001' @ 81 : 1
+2016/04/04-10:28:35.171 2862 Compacting 2@0 + 0@1 files
+2016/04/04-10:28:35.510 2862 Generated table #35: 6 keys, 11237483 bytes
+2016/04/04-10:28:35.561 2862 Generated table #36: 2 keys, 293 bytes
+2016/04/04-10:28:35.561 2862 Compacted 2@0 + 0@1 files => 11237776 bytes
+2016/04/04-10:28:35.617 2862 compacted to: files[ 0 2 2 0 0 0 0 ]
+2016/04/04-10:28:35.617 2862 Delete type=2 #32
+2016/04/04-10:28:35.617 2862 Delete type=2 #29
+2016/04/04-10:28:35.620 2862 Compacting 1@1 + 1@2 files
+2016/04/04-10:28:36.093 2862 Generated table #37: 19 keys, 11237708 bytes
+2016/04/04-10:28:36.093 2862 Compacted 1@1 + 1@2 files => 11237708 bytes
+2016/04/04-10:28:36.130 2862 compacted to: files[ 0 1 2 0 0 0 0 ]
+2016/04/04-10:28:36.130 2862 Delete type=2 #26
+2016/04/04-10:28:36.131 2862 Delete type=2 #35
+2016/04/04-10:28:36.133 2862 Manual compaction at level-0 from '\x00\x02\x01\x02\x01\x18\x001\x002\x003\x003\x001\x006\x001\x006\x002\x009\x004\x005\x007\x009\x003\x004\x003\x006\x001\x005\x00_\x001\x00_\x001' @ 81 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)
+2016/04/04-10:29:05.294 2862 Level-0 table #39: started
+2016/04/04-10:29:05.657 2862 Level-0 table #39: 12699167 bytes OK
+2016/04/04-10:29:05.755 2862 Delete type=0 #33
+2016/04/04-10:29:06.256 669 Current memtable full; waiting...
+2016/04/04-10:29:06.256 2862 Level-0 table #41: started
+2016/04/04-10:29:06.290 2862 Level-0 table #41: 409 bytes OK
+2016/04/04-10:29:06.357 2862 Delete type=0 #38
+2016/04/04-10:29:06.357 2862 Level-0 table #43: started
+2016/04/04-10:29:06.357 2862 Level-0 table #43: 0 bytes OK
+2016/04/04-10:29:06.402 2862 Delete type=0 #40
+2016/04/04-10:29:06.402 2862 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at '\x00\x02\x01\x02\x01\x19\x001\x002\x003\x003\x001\x006\x001\x006\x002\x009\x004\x005\x007\x009\x003\x004\x003\x006\x001\x005\x00_\x001\x00_\x00a\x00p' @ 99 : 1
+2016/04/04-10:29:06.402 2862 Compacting 2@0 + 1@1 files
+2016/04/04-10:29:06.730 2862 Generated table #44: 6 keys, 11278187 bytes
+2016/04/04-10:29:06.781 2862 Generated table #45: 6 keys, 59334 bytes
+2016/04/04-10:29:06.781 2862 Compacted 2@0 + 1@1 files => 11337521 bytes
+2016/04/04-10:29:06.825 2862 compacted to: files[ 0 2 2 0 0 0 0 ]
+2016/04/04-10:29:06.826 2862 Delete type=2 #39
+2016/04/04-10:29:06.832 2862 Delete type=2 #41
+2016/04/04-10:29:06.832 2862 Delete type=2 #36
+2016/04/04-10:29:06.832 2862 Compacting 1@1 + 1@2 files
+2016/04/04-10:29:06.904 2862 Generated table #46: 6 keys, 59334 bytes
+2016/04/04-10:29:06.904 2862 Compacted 1@1 + 1@2 files => 59334 bytes
+2016/04/04-10:29:06.949 2862 compacted to: files[ 0 1 2 0 0 0 0 ]
+2016/04/04-10:29:06.949 2862 Delete type=2 #45
+2016/04/04-10:29:06.949 2862 Delete type=2 #27
+2016/04/04-10:29:06.949 2862 Manual compaction at level-0 from '\x00\x02\x01\x02\x01\x19\x001\x002\x003\x003\x001\x006\x001\x006\x002\x009\x004\x005\x007\x009\x003\x004\x003\x006\x001\x005\x00_\x001\x00_\x00a\x00p' @ 99 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2016/04/04-10:29:06.949 2862 Compacting 1@1 + 1@2 files
+2016/04/04-10:29:07.334 2862 Generated table #47: 19 keys, 11278412 bytes
+2016/04/04-10:29:07.335 2862 Compacted 1@1 + 1@2 files => 11278412 bytes
+2016/04/04-10:29:07.507 2862 compacted to: files[ 0 0 2 0 0 0 0 ]
+2016/04/04-10:29:07.507 2862 Delete type=2 #37
+2016/04/04-10:29:07.510 2862 Delete type=2 #44

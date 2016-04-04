@@ -8,6 +8,10 @@ endif
 " Remove backwards compatibility with Vi.
 set nocompatible
 
+" Don't close buffers when you move away from them for a sec...
+" Just hide them!
+set hidden
+
 " Begin Vundle shit.
 filetype off
 let &rtp = &rtp . ',' . s:editor_root . '/bundle/Vundle.vim'
@@ -17,14 +21,15 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
+
+" Temporarily disabling this while I figure out how to patch the powerline fonts.
+"Plugin 'vim-airline/vim-airline'
+
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 call vundle#end()
 filetype plugin indent on
 " End Vundle shit.
-
-" exec "source " . s:editor_root . '/autoclose.vim'
-" exec "source " . s:editor_root . '/tex_autoclose.vim'
 
 " QUIT INSERTING COMMENTS!
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -50,14 +55,17 @@ set nosmartindent
 
 " Space is your leader.
 let mapleader = " "
+
 " [d]eletes a whole line.
 nnoremap <Leader>d dd
 " [c]hange whole line.
 nnoremap <Leader>c cc
+
 " Faster [w]riting/saving.
 nnoremap <Leader>w :w<CR>
 " Save and [q]uit.
 nnoremap <Leader>q :wq<CR>
+
 " Quicker movement.
 nnoremap <Leader>j }
 nnoremap <Leader>k {
@@ -69,18 +77,21 @@ nnoremap <Leader>l $
 
 " [R]eload .vimrc.
 nnoremap <Leader>r :source ~/.vimrc<CR>
+
 " Switch to buffer [1]-[5]
 nnoremap <Leader>1 :buffer 1<CR>
 nnoremap <Leader>2 :buffer 2<CR>
 nnoremap <Leader>3 :buffer 3<CR>
 nnoremap <Leader>4 :buffer 4<CR>
 nnoremap <Leader>5 :buffer 5<CR>
+
 " Remove pesky search highlighting.
 nnoremap <silent> <Leader><Leader> :nohlsearch<cr>
+
 " Quicker fold toggling. Besides, who uses the tab key.
 nnoremap <tab> za 
 
-" Split maneuvering.
+" Easier split maneuvering.
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -117,4 +128,12 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 colorscheme mod8
-" colorscheme desert
+
+" No more jerking the page halfway over for text that extends
+" beyond the screen width.
+set sidescroll=1
+
+" TODO: Make it so that pasting over a selection doesn't overwrite
+" the paste buffer.
+
+" TODO: Get camel-case text objects. And make "_" count as a word delimiter.

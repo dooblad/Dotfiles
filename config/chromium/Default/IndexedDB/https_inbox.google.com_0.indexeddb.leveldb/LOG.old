@@ -1,0 +1,3 @@
+2016/04/04-09:55:31.653 669 Reusing MANIFEST /home/doobs/.config/chromium/Default/IndexedDB/https_inbox.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2016/04/04-09:55:31.653 669 Recovering log #7
+2016/04/04-09:55:31.670 669 Reusing old log /home/doobs/.config/chromium/Default/IndexedDB/https_inbox.google.com_0.indexeddb.leveldb/000007.log 
