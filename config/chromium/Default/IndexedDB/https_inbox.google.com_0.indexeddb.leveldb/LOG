@@ -1,6 +1,0 @@
-2016/04/04-11:20:19.618 519 Reusing MANIFEST /home/doobs/.config/chromium/Default/IndexedDB/https_inbox.google.com_0.indexeddb.leveldb/MANIFEST-000001
-2016/04/04-11:20:19.618 519 Recovering log #7
-2016/04/04-11:20:19.690 519 Reusing old log /home/doobs/.config/chromium/Default/IndexedDB/https_inbox.google.com_0.indexeddb.leveldb/000007.log 
-2016/04/04-11:21:19.847 1948 Level-0 table #14: started
-2016/04/04-11:21:20.011 1948 Level-0 table #14: 3579410 bytes OK
-2016/04/04-11:21:20.053 1948 Delete type=0 #7
