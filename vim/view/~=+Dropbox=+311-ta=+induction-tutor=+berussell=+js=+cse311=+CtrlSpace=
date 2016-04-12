@@ -1,0 +1,274 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-a")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-b")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-c")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-d")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-e")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-f")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-g")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-h")
+noremap <buffer> <silent> 	 :call ctrlspace#keys#Keypressed("Tab")
+let s:cpo_save=&cpo
+set cpo&vim
+noremap <buffer> <silent> <NL> :call ctrlspace#keys#Keypressed("C-j")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-k")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-l")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("CR")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-n")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-o")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-p")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-q")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-r")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-s")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-t")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-u")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-v")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-w")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-x")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-y")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-z")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("Esc")
+noremap <buffer> <silent> [ :call ctrlspace#keys#MarkKeyEscSequence()
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-]")
+noremap <buffer> <silent>  :call ctrlspace#keys#Keypressed("C-^")
+noremap <buffer> <silent>   :call ctrlspace#keys#Keypressed("Space")
+noremap <buffer> <silent> ! :call ctrlspace#keys#Keypressed("!")
+noremap <buffer> <silent> " :call ctrlspace#keys#Keypressed("\"")
+noremap <buffer> <silent> # :call ctrlspace#keys#Keypressed("#")
+noremap <buffer> <silent> $ :call ctrlspace#keys#Keypressed("$")
+noremap <buffer> <silent> % :call ctrlspace#keys#Keypressed("%")
+noremap <buffer> <silent> & :call ctrlspace#keys#Keypressed("&")
+noremap <buffer> <silent> ' :call ctrlspace#keys#Keypressed("'")
+noremap <buffer> <silent> ( :call ctrlspace#keys#Keypressed("(")
+noremap <buffer> <silent> ) :call ctrlspace#keys#Keypressed(")")
+noremap <buffer> <silent> * :call ctrlspace#keys#Keypressed("*")
+noremap <buffer> <silent> + :call ctrlspace#keys#Keypressed("+")
+noremap <buffer> <silent> , :call ctrlspace#keys#Keypressed(",")
+noremap <buffer> <silent> - :call ctrlspace#keys#Keypressed("-")
+noremap <buffer> <silent> . :call ctrlspace#keys#Keypressed(".")
+noremap <buffer> <silent> / :call ctrlspace#keys#Keypressed("/")
+noremap <buffer> <silent> 0 :call ctrlspace#keys#Keypressed("0")
+noremap <buffer> <silent> 1 :call ctrlspace#keys#Keypressed("1")
+noremap <buffer> <silent> 2 :call ctrlspace#keys#Keypressed("2")
+noremap <buffer> <silent> 3 :call ctrlspace#keys#Keypressed("3")
+noremap <buffer> <silent> 4 :call ctrlspace#keys#Keypressed("4")
+noremap <buffer> <silent> 5 :call ctrlspace#keys#Keypressed("5")
+noremap <buffer> <silent> 6 :call ctrlspace#keys#Keypressed("6")
+noremap <buffer> <silent> 7 :call ctrlspace#keys#Keypressed("7")
+noremap <buffer> <silent> 8 :call ctrlspace#keys#Keypressed("8")
+noremap <buffer> <silent> 9 :call ctrlspace#keys#Keypressed("9")
+noremap <buffer> <silent> : :call ctrlspace#keys#Keypressed(":")
+noremap <buffer> <silent> ; :call ctrlspace#keys#Keypressed(";")
+noremap <buffer> <silent> < :call ctrlspace#keys#Keypressed("<")
+noremap <buffer> <silent> = :call ctrlspace#keys#Keypressed("=")
+noremap <buffer> <silent> > :call ctrlspace#keys#Keypressed(">")
+noremap <buffer> <silent> ? :call ctrlspace#keys#Keypressed("?")
+noremap <buffer> <silent> @ :call ctrlspace#keys#Keypressed("@")
+noremap <buffer> <silent> A :call ctrlspace#keys#Keypressed("A")
+noremap <buffer> <silent> B :call ctrlspace#keys#Keypressed("B")
+noremap <buffer> <silent> C :call ctrlspace#keys#Keypressed("C")
+noremap <buffer> <silent> D :call ctrlspace#keys#Keypressed("D")
+noremap <buffer> <silent> E :call ctrlspace#keys#Keypressed("E")
+noremap <buffer> <silent> F :call ctrlspace#keys#Keypressed("F")
+noremap <buffer> <silent> G :call ctrlspace#keys#Keypressed("G")
+noremap <buffer> <silent> H :call ctrlspace#keys#Keypressed("H")
+noremap <buffer> <silent> I :call ctrlspace#keys#Keypressed("I")
+noremap <buffer> <silent> J :call ctrlspace#keys#Keypressed("J")
+noremap <buffer> <silent> K :call ctrlspace#keys#Keypressed("K")
+noremap <buffer> <silent> L :call ctrlspace#keys#Keypressed("L")
+noremap <buffer> <silent> M :call ctrlspace#keys#Keypressed("M")
+noremap <buffer> <silent> N :call ctrlspace#keys#Keypressed("N")
+noremap <buffer> <silent> O :call ctrlspace#keys#Keypressed("O")
+noremap <buffer> <silent> P :call ctrlspace#keys#Keypressed("P")
+noremap <buffer> <silent> Q :call ctrlspace#keys#Keypressed("Q")
+noremap <buffer> <silent> R :call ctrlspace#keys#Keypressed("R")
+noremap <buffer> <silent> S :call ctrlspace#keys#Keypressed("S")
+noremap <buffer> <silent> T :call ctrlspace#keys#Keypressed("T")
+noremap <buffer> <silent> U :call ctrlspace#keys#Keypressed("U")
+noremap <buffer> <silent> V :call ctrlspace#keys#Keypressed("V")
+noremap <buffer> <silent> W :call ctrlspace#keys#Keypressed("W")
+noremap <buffer> <silent> X :call ctrlspace#keys#Keypressed("X")
+noremap <buffer> <silent> Y :call ctrlspace#keys#Keypressed("Y")
+noremap <buffer> <silent> Z :call ctrlspace#keys#Keypressed("Z")
+noremap <buffer> <silent> [ :call ctrlspace#keys#Keypressed("[")
+noremap <buffer> <silent> \ :call ctrlspace#keys#Keypressed("BSlash")
+noremap <buffer> <silent> ] :call ctrlspace#keys#Keypressed("]")
+noremap <buffer> <silent> ^ :call ctrlspace#keys#Keypressed("^")
+noremap <buffer> <silent> _ :call ctrlspace#keys#Keypressed("_")
+noremap <buffer> <silent> ` :call ctrlspace#keys#Keypressed("`")
+noremap <buffer> <silent> a :call ctrlspace#keys#Keypressed("a")
+noremap <buffer> <silent> b :call ctrlspace#keys#Keypressed("b")
+noremap <buffer> <silent> c :call ctrlspace#keys#Keypressed("c")
+noremap <buffer> <silent> d :call ctrlspace#keys#Keypressed("d")
+noremap <buffer> <silent> e :call ctrlspace#keys#Keypressed("e")
+noremap <buffer> <silent> f :call ctrlspace#keys#Keypressed("f")
+noremap <buffer> <silent> g :call ctrlspace#keys#Keypressed("g")
+noremap <buffer> <silent> h :call ctrlspace#keys#Keypressed("h")
+noremap <buffer> <silent> i :call ctrlspace#keys#Keypressed("i")
+noremap <buffer> <silent> j :call ctrlspace#keys#Keypressed("j")
+noremap <buffer> <silent> k :call ctrlspace#keys#Keypressed("k")
+noremap <buffer> <silent> l :call ctrlspace#keys#Keypressed("l")
+noremap <buffer> <silent> m :call ctrlspace#keys#Keypressed("m")
+noremap <buffer> <silent> n :call ctrlspace#keys#Keypressed("n")
+noremap <buffer> <silent> o :call ctrlspace#keys#Keypressed("o")
+noremap <buffer> <silent> p :call ctrlspace#keys#Keypressed("p")
+noremap <buffer> <silent> q :call ctrlspace#keys#Keypressed("q")
+noremap <buffer> <silent> r :call ctrlspace#keys#Keypressed("r")
+noremap <buffer> <silent> s :call ctrlspace#keys#Keypressed("s")
+noremap <buffer> <silent> t :call ctrlspace#keys#Keypressed("t")
+noremap <buffer> <silent> u :call ctrlspace#keys#Keypressed("u")
+noremap <buffer> <silent> v :call ctrlspace#keys#Keypressed("v")
+noremap <buffer> <silent> w :call ctrlspace#keys#Keypressed("w")
+noremap <buffer> <silent> x :call ctrlspace#keys#Keypressed("x")
+noremap <buffer> <silent> y :call ctrlspace#keys#Keypressed("y")
+noremap <buffer> <silent> z :call ctrlspace#keys#Keypressed("z")
+noremap <buffer> <silent> { :call ctrlspace#keys#Keypressed("{")
+noremap <buffer> <silent> | :call ctrlspace#keys#Keypressed("Bar")
+noremap <buffer> <silent> } :call ctrlspace#keys#Keypressed("}")
+noremap <buffer> <silent> ~ :call ctrlspace#keys#Keypressed("~")
+noremap <buffer> <silent> <F12> :call ctrlspace#keys#Keypressed("F12")
+noremap <buffer> <silent> <F11> :call ctrlspace#keys#Keypressed("F11")
+noremap <buffer> <silent> <F10> :call ctrlspace#keys#Keypressed("F10")
+noremap <buffer> <silent> <F9> :call ctrlspace#keys#Keypressed("F9")
+noremap <buffer> <silent> <F8> :call ctrlspace#keys#Keypressed("F8")
+noremap <buffer> <silent> <F7> :call ctrlspace#keys#Keypressed("F7")
+noremap <buffer> <silent> <F6> :call ctrlspace#keys#Keypressed("F6")
+noremap <buffer> <silent> <F5> :call ctrlspace#keys#Keypressed("F5")
+noremap <buffer> <silent> <F4> :call ctrlspace#keys#Keypressed("F4")
+noremap <buffer> <silent> <F3> :call ctrlspace#keys#Keypressed("F3")
+noremap <buffer> <silent> <F2> :call ctrlspace#keys#Keypressed("F2")
+noremap <buffer> <silent> <F1> :call ctrlspace#keys#Keypressed("F1")
+noremap <buffer> <silent> <PageDown> :call ctrlspace#keys#Keypressed("PageDown")
+noremap <buffer> <silent> <PageUp> :call ctrlspace#keys#Keypressed("PageUp")
+noremap <buffer> <silent> <Right> :call ctrlspace#keys#Keypressed("Right")
+noremap <buffer> <silent> <Left> :call ctrlspace#keys#Keypressed("Left")
+noremap <buffer> <silent> <End> :call ctrlspace#keys#Keypressed("End")
+noremap <buffer> <silent> <Home> :call ctrlspace#keys#Keypressed("Home")
+noremap <buffer> <silent> <Up> :call ctrlspace#keys#Keypressed("Up")
+noremap <buffer> <silent> <Down> :call ctrlspace#keys#Keypressed("Down")
+noremap <buffer> <silent> <2-LeftMouse> :call ctrlspace#keys#Keypressed("2-LeftMouse")
+noremap <buffer> <silent> <LeftRelease> :call ctrlspace#keys#Keypressed("LeftRelease")
+noremap <buffer> <silent> <LeftDrag> :call ctrlspace#keys#Keypressed("LeftDrag")
+noremap <buffer> <silent> <ScrollWheelDown> :call ctrlspace#keys#Keypressed("MouseUp")
+noremap <buffer> <silent> <ScrollWheelUp> :call ctrlspace#keys#Keypressed("MouseDown")
+noremap <buffer> <silent> <S-Tab> :call ctrlspace#keys#Keypressed("S-Tab")
+noremap <buffer> <silent> <BS> :call ctrlspace#keys#Keypressed("BS")
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=delete
+setlocal nobuflisted
+setlocal buftype=nofile
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'ctrlspace'
+setlocal filetype=ctrlspace
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tn2l
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal linebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal nomodifiable
+setlocal nrformats=bin,octal,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal previewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%1*âŒ—\ \ \ \ â€¢\ %=%1*\ %<1\ [.vimrc]
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'ctrlspace'
+setlocal syntax=ctrlspace
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal winfixheight
+setlocal nowinfixwidth
+setlocal nowrap
+setlocal wrapmargin=0
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/Dropbox/311-ta/induction-tutor/berussell
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :
