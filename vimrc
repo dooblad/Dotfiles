@@ -18,6 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 call vundle#end()
 
 " Re-enable filetype plugins
@@ -38,7 +39,7 @@ set incsearch
 set hidden
 
 " QUIT INSERTING COMMENTS!
-set formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd Filetype * silent setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Set syntax highlighting
 syntax on
@@ -128,6 +129,11 @@ map <C-n> :NERDTreeToggle<CR>
 set nowrap
 set wrapmargin=0
 set textwidth=0
+
+" Default tab sizes for unknown filetypes
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " TODO: Make it so that pasting over a selection doesn't overwrite the paste buffer
 " TODO: Get camel-case text objects, and make "_" count as a word delimiter
