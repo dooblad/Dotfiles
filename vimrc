@@ -39,7 +39,7 @@ set incsearch
 set hidden
 
 " QUIT INSERTING COMMENTS!
-autocmd Filetype * silent setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * silent setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Set syntax highlighting
 syntax on
@@ -55,10 +55,6 @@ set expandtab
 " Smart indenting?
 set autoindent
 set nosmartindent
-
-" Save fold state across sessions
-"autocmd BufWinLeave * silent mkview
-"autocmd BufWinEnter * silent loadview
 
 " Dis ones nice, I gess
 colorscheme mod8
@@ -78,6 +74,8 @@ let mapleader = " "
 nnoremap <Leader>d dd
 " [c]hange whole line
 nnoremap <Leader>c cc
+" [y]ank the whole line
+nnoremap <Leader>y yy
 
 " Faster [w]riting/saving
 nnoremap <Leader>w :w<CR>
@@ -125,6 +123,11 @@ inoremap jk <ESC>
 " Use Ctrl-n to open up NerdTree
 map <C-n> :NERDTreeToggle<CR>
 
+" Delete words with backspace
+nnoremap <BS> diw
+" Insert line breaks with enter
+nnoremap <CR> i<CR><Esc>
+
 " Fuck line wrapping
 set nowrap
 set wrapmargin=0
@@ -134,6 +137,9 @@ set textwidth=0
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" CSE 341
+autocmd FileType scheme silent set syntax=lisp
 
 " TODO: Make it so that pasting over a selection doesn't overwrite the paste buffer
 " TODO: Get camel-case text objects, and make "_" count as a word delimiter

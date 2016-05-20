@@ -7,7 +7,7 @@
 foreground      = #c5c8c6
 foreground_bold = #c5c8c6
 cursor          = #c5c8c6
-background      = rgba(0, 0, 0, 0.8)
+background      = rgba(0, 0, 0, 0.85)
 
 # black
 color0  = #282a2e
@@ -40,3 +40,9 @@ color14 = #8abeb7
 # white
 color7  = #707880
 color15 = #c5c8c6
+
+[hints]
+
+# border
+#border = #3f3f3f
+#border-width = 1

@@ -53,7 +53,7 @@ TEXT
     { "full_text" : "${cpu cpu4}%", "color" : ${if_match ${cpu cpu4} > 90}"\#FF0000"${else}"\#FFFFFF"${endif} },
     { "full_text" : "]", "color": "\#FFFFFF" },
     { "full_text" : "[", "color": "\#FFFFFF" },
-    { "full_text" : "${battery_percent}%", "color": ${if_match ${battery_percent} < 15}"\#FF0000"${else}${if_match ${battery_percent} < 60}"\#FFFF66"${else}"\#66FF66"${endif}${endif} },
+    { "full_text" : "${battery}", "color": ${if_match ${battery_percent} < 15}"\#FF0000"${else}${if_match ${battery_percent} < 60}"\#FFFF66"${else}"\#66FF66"${endif}${endif} },
     { "full_text" : "${battery_bar 1,10}", "color": ${if_match ${battery_percent} < 15}"\#FF0000"${else}${if_match ${battery_percent} < 60}"\#FFFF66"${else}"\#66FF66"${endif}${endif} },
     { "full_text" : "]", "color": "\#FFFFFF" },
     { "full_text" : "[", "color": "\#FFFFFF" },
