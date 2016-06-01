@@ -1,32 +1,63 @@
 " NeoVim <-> Vim compatibility (just in case, yo)
 if has('nvim')
-    let s:editor_root=expand("~/.nvim")
+    let s:editor_root = expand("~/.nvim")
 else
-    let s:editor_root=expand("~/.vim")
+    let s:editor_root = expand("~/.vim")
 endif
 
 " Remove backwards compatibility with Vi
 set nocompatible
 
-"=-----------="
-" VUNDLE SHIT "
-"=-----------="
+"-----------------"
+"   VUNDLE SHIT   "
+"-----------------"
 filetype off
 let &rtp = &rtp . ',' . s:editor_root . '/bundle/Vundle.vim'
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'
 Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 call vundle#end()
 
 " Re-enable filetype plugins
 filetype plugin indent on
 
-"=------="
-" CONFIG "
-"=------="
+"------------"
+"   CONFIG   "
+"------------"
+
+let tex_no_error=1
+
+let g:limelight_conceal_ctermfg = 'DarkGray'
+let g:limelight_default_coefficient = 0.8
+
+function! s:goyo_enter()
+    let b:quitting = 0
+    let b:quitting_bang = 0
+    autocmd QuitPre <buffer> let b:quitting = 1
+    cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+
+    Limelight
+endfunction
+
+function! s:goyo_leave()
+	" Quit Vim if this is the only remaining buffer
+	if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+		if b:quitting_bang
+			qa!
+		else
+			qa
+		endif
+	endif
+    colorscheme mod8
+
+    Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Vim tabs are LAAAAAAAME
 set showtabline=0
@@ -63,9 +94,9 @@ colorscheme mod8
 " beyond the screen width
 set sidescroll=1
 
-"=------------="
+"--------------"
 " KEY BINDINGS "
-"=------------="
+"--------------"
 
 " Space is your leader
 let mapleader = " "
@@ -77,11 +108,6 @@ nnoremap <Leader>c cc
 " [y]ank the whole line
 nnoremap <Leader>y yy
 
-" Faster [w]riting/saving
-nnoremap <Leader>w :w<CR>
-" Save and [q]uit
-nnoremap <Leader>q :wq<CR>
-
 " Larger movements with leader prefix
 nnoremap <Leader>j }
 nnoremap <Leader>k {
@@ -92,6 +118,7 @@ nnoremap <Leader>l $
 nnoremap <Leader>; :b#<CR>
 
 " [R]eload .vimrc
+" TODO: Change this to an Ex command, rather than a binding
 nnoremap <Leader>r :source ~/.vimrc<CR>
 
 " Switch to buffer [1]-[5]
@@ -121,10 +148,8 @@ nnoremap <Leader>- :sp<CR>
 inoremap jk <ESC>
 
 " Use Ctrl-n to open up NerdTree
-map <C-n> :NERDTreeToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 
-" Delete words with backspace
-nnoremap <BS> diw
 " Insert line breaks with enter
 nnoremap <CR> i<CR><Esc>
 
@@ -137,6 +162,9 @@ set textwidth=0
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" More convenient Goyo
+nnoremap <Leader>g :Goyo<CR>
 
 " CSE 341
 autocmd FileType scheme silent set syntax=lisp
