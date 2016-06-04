@@ -1,3 +1,13 @@
+
+"----------------------------------------------------------"
+"      ____              __             _    ___           "
+"     / __ \____  ____  / /_  _____    | |  / (_)___ ___   "
+"    / / / / __ \/ __ \/ __ \/ ___/    | | / / / __ `__ \  "
+"   / /_/ / /_/ / /_/ / /_/ (__  )     | |/ / / / / / / /  "
+"  /_____/\____/\____/_.___/____/      |___/_/_/ /_/ /_/   "
+"                                                          "
+"----------------------------------------------------------"
+
 " NeoVim <-> Vim compatibility (just in case, yo)
 if has('nvim')
     let s:editor_root = expand("~/.nvim")
@@ -7,6 +17,11 @@ endif
 
 " Remove backwards compatibility with Vi
 set nocompatible
+
+" Add them colors if they got 'em
+if has('termguicolors')
+    set termguicolors
+endif
 
 "-----------------"
 "   VUNDLE SHIT   "
@@ -28,7 +43,8 @@ filetype plugin indent on
 "   CONFIG   "
 "------------"
 
-let tex_no_error=1
+" Prevent ugly LaTeX error highlighting
+let tex_no_error = 1
 
 let g:limelight_conceal_ctermfg = 'DarkGray'
 let g:limelight_default_coefficient = 0.8
@@ -117,6 +133,9 @@ nnoremap <Leader>l $
 " Previous buffer (similar to Tmux)
 nnoremap <Leader>; :b#<CR>
 
+" Buffer close
+nnoremap <C-W> :bdelete<CR>
+
 " [R]eload .vimrc
 " TODO: Change this to an Ex command, rather than a binding
 nnoremap <Leader>r :source ~/.vimrc<CR>
@@ -127,9 +146,6 @@ nnoremap <Leader>2 :buffer 2<CR>
 nnoremap <Leader>3 :buffer 3<CR>
 nnoremap <Leader>4 :buffer 4<CR>
 nnoremap <Leader>5 :buffer 5<CR>
-
-" Remove pesky search highlighting
-nnoremap <silent> <Leader><Leader> :nohlsearch<cr>
 
 " Quicker fold toggling. Besides, who uses the tab key
 nnoremap <tab> za 
@@ -153,6 +169,10 @@ nmap <C-n> :NERDTreeToggle<CR>
 " Insert line breaks with enter
 nnoremap <CR> i<CR><Esc>
 
+" Buffer navigation
+nnoremap <Leader>> :bnext<CR>
+nnoremap <Leader>< :bprevious<CR>
+
 " Fuck line wrapping
 set nowrap
 set wrapmargin=0
@@ -166,10 +186,9 @@ set shiftwidth=4
 " More convenient Goyo
 nnoremap <Leader>g :Goyo<CR>
 
-" CSE 341
-autocmd FileType scheme silent set syntax=lisp
+autocmd Filetype scheme silent set syntax=lisp
 
 " TODO: Make it so that pasting over a selection doesn't overwrite the paste buffer
 " TODO: Get camel-case text objects, and make "_" count as a word delimiter
 " TODO: Use backspace in normal mode for something
-
+" TODO: Vertigo.vim?
