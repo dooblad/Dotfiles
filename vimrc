@@ -34,6 +34,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'klen/python-mode'
 call vundle#end()
 
 " Re-enable filetype plugins
@@ -42,6 +44,19 @@ filetype plugin indent on
 "------------"
 "   CONFIG   "
 "------------"
+
+" Let python-mode take care of indentation
+let g:pymode_indent = 1
+
+" Don't bother with errors while typing (only on save)
+let g:pymode_lint_on_write = 1
+let g:pymode_lint_on_fly = 0
+
+" Don't open a little window for every error
+let g:pymode_lint_cwindow = 0
+
+" Say no to automatic auto-completion!
+let g:pymode_rope_complete_on_dot = 0
 
 " Prevent ugly LaTeX error highlighting
 let tex_no_error = 1
@@ -67,7 +82,8 @@ function! s:goyo_leave()
 			qa
 		endif
 	endif
-    colorscheme mod8
+    "colorscheme mod8
+    colorscheme hybrid
 
     Limelight!
 endfunction
@@ -78,8 +94,8 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " Vim tabs are LAAAAAAAME
 set showtabline=0
 
-" Allows for realtime regex testing
-set incsearch
+set incsearch       " Allows for realtime regex testing
+set smartcase       " Override 'ignorecase' if search contains capitals
 
 " Don't close buffers when you move away from them for a sec...
 " Just hide 'em!
@@ -99,20 +115,50 @@ set number
 " Expands tabs into spaces for better cross-platform viewing
 set expandtab
 
-" Smart indenting?
+" Indentation preferences
 set autoindent
 set nosmartindent
 
-" Dis ones nice, I gess
-colorscheme mod8
+" Dem pastel colors tho
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 0
+set background=dark
+colorscheme hybrid
 
 " No more jerking the page halfway over for text that extends
 " beyond the screen width
 set sidescroll=1
 
+" Fuck line wrapping
+set nowrap
+set wrapmargin=0
+set textwidth=0
+
+" Default tab behaviors for unknown filetypes
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" Reload buffer if file has been externally modified
+set autoread
+
 "--------------"
 " KEY BINDINGS "
 "--------------"
+
+" Prevent 'x' and 'c' from overwriting
+" yank register.
+nnoremap x "_x
+nnoremap c "_c
+
+" Stay in place while joining lines
+nnoremap J mzJ`z
+
+" Use arrow keys for buffer resizing
+nnoremap <silent> <Left> :vertical resize +2<CR>
+nnoremap <silent> <Right> :vertical resize -2<CR>
+nnoremap <silent> <Up> :resize -2<CR>
+nnoremap <silent> <Down> :resize +2<CR>
 
 " Space is your leader
 let mapleader = " "
@@ -137,15 +183,7 @@ nnoremap <Leader>; :b#<CR>
 nnoremap <C-W> :bdelete<CR>
 
 " [R]eload .vimrc
-" TODO: Change this to an Ex command, rather than a binding
 nnoremap <Leader>r :source ~/.vimrc<CR>
-
-" Switch to buffer [1]-[5]
-nnoremap <Leader>1 :buffer 1<CR>
-nnoremap <Leader>2 :buffer 2<CR>
-nnoremap <Leader>3 :buffer 3<CR>
-nnoremap <Leader>4 :buffer 4<CR>
-nnoremap <Leader>5 :buffer 5<CR>
 
 " Quicker fold toggling. Besides, who uses the tab key
 nnoremap <tab> za 
@@ -173,20 +211,19 @@ nnoremap <CR> i<CR><Esc>
 nnoremap <Leader>> :bnext<CR>
 nnoremap <Leader>< :bprevious<CR>
 
-" Fuck line wrapping
-set nowrap
-set wrapmargin=0
-set textwidth=0
-
-" Default tab sizes for unknown filetypes
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
 " More convenient Goyo
 nnoremap <Leader>g :Goyo<CR>
 
-autocmd Filetype scheme silent set syntax=lisp
+" Backtick tracks column position, but
+" it's further away. So swap 'em.
+nnoremap ` '
+nnoremap ' `
+
+" Shitty brace completion
+inoremap {<CR> {<CR>}<ESC>O
+
+" Override builtin go-to-definition key
+let g:pymode_rope_goto_definition_bind = "<C-]>"
 
 " TODO: Make it so that pasting over a selection doesn't overwrite the paste buffer
 " TODO: Get camel-case text objects, and make "_" count as a word delimiter
