@@ -229,3 +229,4 @@ let g:pymode_rope_goto_definition_bind = "<C-]>"
 " TODO: Get camel-case text objects, and make "_" count as a word delimiter
 " TODO: Use backspace in normal mode for something
 " TODO: Vertigo.vim?
+" TODO: Make ftplugin for tex that adds "$" as a paired token.

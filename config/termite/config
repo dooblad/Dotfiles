@@ -1,10 +1,12 @@
 [options]
-font = Monospace 14 
+
+font = Monospace 14
 
 [colors]
 
 # special
-background = #1D1F21
+#background = #1D1F21
+background = #0A0A0A
 foreground = #C5C8C6
 foreground_bold = #C5C8C6
 cursor = #C5C8C6

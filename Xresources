@@ -1,0 +1,15 @@
+!------------!
+!    ROFI    !
+!------------!
+
+! ----------------------------------------------------------------------
+rofi.width: 50
+rofi.padding: 300
+rofi.fullscreen: true
+rofi.terminal: termite
+rofi.lines: 5
+rofi.opacity: 100
+rofi.font: Droid Sans Mono 24
+rofi.color-window: argb:aa181818, argb:aa181818, #181818
+rofi.color-normal: argb:000000, #ffffff, argb:00000000, argb:aa5A7181, #ffffff
+! ----------------------------------------------------------------------
