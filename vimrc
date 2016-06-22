@@ -1,13 +1,17 @@
-
-"----------------------------------------------------------"
+"=========================================================="
 "      ____              __             _    ___           "
 "     / __ \____  ____  / /_  _____    | |  / (_)___ ___   "
 "    / / / / __ \/ __ \/ __ \/ ___/    | | / / / __ `__ \  "
 "   / /_/ / /_/ / /_/ / /_/ (__  )     | |/ / / / / / / /  "
 "  /_____/\____/\____/_.___/____/      |___/_/_/ /_/ /_/   "
 "                                                          "
-"----------------------------------------------------------"
+"=========================================================="
 
+" ___________ "
+" |_________| "
+" | STARTUP | "
+" |‾‾‾‾‾‾‾‾‾| "
+" ‾‾‾‾‾‾‾‾‾‾‾ "
 " NeoVim <-> Vim compatibility (just in case, yo)
 if has('nvim')
     let s:editor_root = expand("~/.nvim")
@@ -23,9 +27,14 @@ if has('termguicolors')
     set termguicolors
 endif
 
-"-----------------"
-"   VUNDLE SHIT   "
-"-----------------"
+set t_Co=256
+set t_ut=
+
+" __________ "
+" |________| "
+" | VUNDLE | "
+" |‾‾‾‾‾‾‾‾| "
+" ‾‾‾‾‾‾‾‾‾‾ "
 filetype off
 let &rtp = &rtp . ',' . s:editor_root . '/bundle/Vundle.vim'
 call vundle#begin()
@@ -36,15 +45,64 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'klen/python-mode'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
 call vundle#end()
 
 " Re-enable filetype plugins
 filetype plugin indent on
 
-"------------"
-"   CONFIG   "
-"------------"
+" __________ "
+" |________| "
+" | CONFIG | "
+" |‾‾‾‾‾‾‾‾| "
+" ‾‾‾‾‾‾‾‾‾‾ "
 
+" Call this function when [re]setting colors
+function! s:color_set()
+    set background=dark
+    colorscheme mod8
+endfunction
+
+" _______________________________ "
+" | Magic That Makes Paste Work | "
+" ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾ "
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" ______________ "
+" | Javascript | "
+" ‾‾‾‾‾‾‾‾‾‾‾‾‾‾ "
+
+" Highlight ES6 template strings
+hi link javaScriptTemplateDelim String
+hi link javaScriptTemplateVar Text
+hi link javaScriptTemplateString String
+
+let g:used_javascript_libs = 'jquery'
+
+" __________ "
+" | Python | "
+" ‾‾‾‾‾‾‾‾‾‾ "
 " Let python-mode take care of indentation
 let g:pymode_indent = 1
 
@@ -58,17 +116,30 @@ let g:pymode_lint_cwindow = 0
 " Say no to automatic auto-completion!
 let g:pymode_rope_complete_on_dot = 0
 
-" Prevent ugly LaTeX error highlighting
+" _________ "
+" | LaTeX | "
+" ‾‾‾‾‾‾‾‾‾ "
 let tex_no_error = 1
 
-let g:limelight_conceal_ctermfg = 'DarkGray'
-let g:limelight_default_coefficient = 0.8
+" _____________ "
+" | Limelight | "
+" ‾‾‾‾‾‾‾‾‾‾‾‾‾ "
+let g:limelight_conceal_ctermfg = 0
+let g:limelight_conceal_guifg = '#8a8a8a'
+let g:limelight_default_coefficient = 0.3
+
+" ________ "
+" | Goyo | "
+" ‾‾‾‾‾‾‾‾ "
 
 function! s:goyo_enter()
     let b:quitting = 0
     let b:quitting_bang = 0
     autocmd QuitPre <buffer> let b:quitting = 1
     cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+
+    " Center the cursor on the screen
+    set scrolloff=999
 
     Limelight
 endfunction
@@ -82,8 +153,12 @@ function! s:goyo_leave()
 			qa
 		endif
 	endif
-    "colorscheme mod8
-    colorscheme hybrid
+
+    " Back to normal scrolling
+    set scrolloff=0
+
+    " Reset colors
+    call <SID>color_set()
 
     Limelight!
 endfunction
@@ -91,6 +166,9 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
+" ___________ "
+" | General | "
+" ‾‾‾‾‾‾‾‾‾‾‾ "
 " Vim tabs are LAAAAAAAME
 set showtabline=0
 
@@ -119,12 +197,6 @@ set expandtab
 set autoindent
 set nosmartindent
 
-" Dem pastel colors tho
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 0
-set background=dark
-colorscheme hybrid
-
 " No more jerking the page halfway over for text that extends
 " beyond the screen width
 set sidescroll=1
@@ -142,10 +214,11 @@ set shiftwidth=4
 " Reload buffer if file has been externally modified
 set autoread
 
-"--------------"
-" KEY BINDINGS "
-"--------------"
-
+" ________________ "
+" |______________| "
+" | KEY BINDINGS | "
+" |‾‾‾‾‾‾‾‾‾‾‾‾‾‾| "
+" ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾ "
 " Prevent 'x' and 'c' from overwriting
 " yank register.
 nnoremap x "_x
@@ -224,6 +297,8 @@ inoremap {<CR> {<CR>}<ESC>O
 
 " Override builtin go-to-definition key
 let g:pymode_rope_goto_definition_bind = "<C-]>"
+
+call <SID>color_set()
 
 " TODO: Make it so that pasting over a selection doesn't overwrite the paste buffer
 " TODO: Get camel-case text objects, and make "_" count as a word delimiter
