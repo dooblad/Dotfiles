@@ -1,0 +1,6 @@
+#! /bin/bash
+
+# Load custom key mappings.
+#if [ -s ~/.Xmodmap ]; then
+#    xmodmap ~/.Xmodmap
+#fi

@@ -141,9 +141,9 @@ bindsym Ctrl+Mod1+l exec lock -f DejaVu-Sans
 bindsym $mod+Tab workspace back_and_forth
 
 # Start up
-exec yabar
+exec_always yabar
 exec_always compton -b -c -f
 # TODO: Randomize wallpaper each time
-exec_always feh --bg-scale $HOME/Pictures/wallpapers/a.jpg
+exec_always $HOME/scripts/random-wallpaper 
 exec --no-startup-id dropbox
 exec --no-startup-id redshift

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+FONT_BASE="DejaVu Sans Mono"
+FONT_NORMAL="${FONT_BASE}:size=12"
+FONT_SMALL="${FONT_BASE}:size=4"
+
+COLOR_BACKGROUND="#FF1F1F1F"
+COLOR_FOREGROUND="#FFC0B18B"
+COLOR_ICON="#FF775759"
+COLOR_BORDER="#FF474036"
+
+# Lemonbar workspace colors
+COLOR_ACTIVE="#FFAF865A"
+COLOR_OCCUPIED="#FF4A3637"
+COLOR_URGENT="#FFD17B49"
+
+# Height of underlines / overlines
+LINEHEIGHT="3"
+
+# Panel geometry
+PANEL_HEIGHT=28
+TOP_PADDING=4
+SIDE_PADDING=4
+PANEL_WIDTH=$(($(xrandr | grep -E '[0-9]+x[0-9]+.*\*' | cut -d x -f1) - $((${SIDE_PADDING} * 2))))
+PANEL_GEOMETRY="${PANEL_WIDTH}x${PANEL_HEIGHT}+${SIDE_PADDING}+${TOP_PADDING}"
+
+# Monitor to display panel on
+MONITOR="$(bspc query -M | tail -n1)"
+
+# Length of volume bar
+BAR_LENGTH=20
+BAR_CHAR='='

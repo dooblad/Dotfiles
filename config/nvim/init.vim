@@ -29,6 +29,9 @@ call dein#add('ctrlpvim/ctrlp.vim')
 " Directory view
 call dein#add('scrooloose/nerdtree')
 
+" Allow repeating for plugins
+call dein#add('tpope/vim-repeat')
+
 " Surround errythang
 call dein#add('tpope/vim-surround')
 
@@ -39,7 +42,7 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-commentary')
 
 " Syntaxxxxx
-call dein#add('neomake/neomake')
+"call dein#add('neomake/neomake')
 
 " i3 config
 call dein#add('PotatoesMaster/i3-vim-syntax')
@@ -84,11 +87,10 @@ function! s:color_set()
     colorscheme mod8
 endfunction
 
-" ___________"
-" | Neomake | "
-" ‾‾‾‾‾‾‾‾‾‾‾"
-let g:neomake_javascript_enabled_makers = ['eslint']
-autocmd! BufWritePost * Neomake
+" _______"
+" | GPG |"
+" ‾‾‾‾‾‾‾"
+let g:gpg_user_name = "Doobs Parn"
 
 " ____________________"
 " | CTags Generation | "
@@ -276,7 +278,7 @@ nnoremap <Leader>h ^
 nnoremap <Leader>l $
 
 " Previous buffer (similar to Tmux)
-nnoremap <silent> <Leader>; :b#<CR>
+nnoremap <silent> <Leader><Tab> :b#<CR>
 
 " Shift tab goes backwards on the location stack.
 " Tab goes forwards.

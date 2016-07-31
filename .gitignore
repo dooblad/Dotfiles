@@ -3,9 +3,14 @@ chromium/
 config/blockify
 config/dconf
 config/gedit
+config/menus
+config/menus/applications-merged
+config/menus/applications-merged/user-chrome-apps.menu
+config/nvim/plugins
 config/pulse
 config/QtProject.conf
 config/ranger
+config/Skype
 config/spotify
 config/sublime-text-2
 config/sublime-text-3

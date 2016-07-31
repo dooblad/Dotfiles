@@ -1,10 +1,82 @@
-!------------!
-!    ROFI    !
-!------------!
+!------------------------------------------------------------------------------
+! c o l o r - s e t t i n g s
 
-! ----------------------------------------------------------------------
-rofi.width: 50
-rofi.padding: 300
+*background:   #222222
+*foreground:   #777777
+*cursorColor:  #FFFFFF
+*cursorColor2: #EEEEEE
+*colorBD:      #BBBBBB
+*colorUL:      #BBBBBB
+
+! black
+*color0:  #222222
+*color8:  #222222
+
+! red
+*color1:  #9f6767
+*color9:  #9f6767
+
+! green
+*color2:  #92ac68
+*color10: #92ac68
+
+! yellow
+*color3:  #d0d293
+*color11: #d0d293
+
+! blue
+*color4:  #9aacc3
+*color12: #9aacc3
+
+! magenta
+*color5:  #bb77a4
+*color13: #bb77a4
+
+! cyan
+*color6:  #77bbb5
+*color14: #77bbb5
+
+! white
+*color7:  #666666
+*color15: #888888
+
+!------------------------------------------------------------------------------
+! u r x v t
+
+URxvt*geometry:               112x22  
+!URxvt*font:                  xft:terminus:pixelsize=16
+URxvt*font:                   xft:DejaVu\ Sans\ Mono:pixelsize=16
+URXvt*letterSpace:            -1
+URXvt*lineSpace:              -1
+URxvt*scrollBar:              false
+URxvt*scrollBar_right:        true
+URxvt*scrollColor:            #000000
+URxvt*depth:                  32
+URxvt*background:             rgba:0000/0000/0600/dfff
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755:               false
+URxvt.perl-ext-common:        default,clipboard
+URxvt.url-select.launcher:    chromium
+URxvt.url-select.underline:   true
+
+
+!------------------------------------------------------------------------------
+! y e a h c o n s o l e
+
+yeahconsole*term:          urxvtc
+yeahconsole*toggleKey:     Win+e
+yeahconsole*keyBigger:     WinControl+e
+yeahconsole*keySmaller:    WinControlAlt+e
+yeahconsole*consoleHeight: 10
+yeahconsole*handleWidth:   0
+yeahconsole*aniDelay:      15
+
+!-----------------------------------------------------------------------
+! r o f i
+
+rofi.width: 300
+rofi.padding: 250
 rofi.fullscreen: true
 rofi.terminal: termite
 rofi.lines: 5
@@ -12,4 +84,3 @@ rofi.opacity: 100
 rofi.font: Droid Sans Mono 24
 rofi.color-window: argb:aa181818, argb:aa181818, #181818
 rofi.color-normal: argb:000000, #ffffff, argb:00000000, argb:aa5A7181, #ffffff
-! ----------------------------------------------------------------------

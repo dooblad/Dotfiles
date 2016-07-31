@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+$HOME/scripts/random-wallpaper
+
+sxhkd &
+redshift &
+dropbox &
+urxvtd &
+yeahconsole &
+compton &
