@@ -11,10 +11,10 @@ conky.config = {
     format_human_readable = true,
 }
 
-conky.text = [[SYS%{F\#473E36}\
-%{B\#C76161} CPU: ${cpu}% \
-%{B\#E8AC6F} MEM: ${mem} \
-%{B\#D9CD6A} /: ${fs_used_perc /}% \
-%{B\#67A67D} /home: ${fs_used_perc /home}% \
-%{B\#65ABC2} ${time %a %d %b %H:%M} \
-%{F-}%{B-}]]
+conky.text = [[SYS\
+%{B\#4A3637} \
+CPU: ${cpu}% %{F\#AF865A}/%{F-} \
+MEM: ${mem} %{F\#AF865A}/%{F-} \
+BAT: ${battery_percent}% %{F\#AF865A}/%{F-} \
+${time %a %d %b %H:%M} %{F-}%{B-}\
+]]

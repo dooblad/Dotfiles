@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+# Set `SCROLL_WIDTH` to 20, only if it's not already defined
+SCROLL_WIDTH="${SCROLL_WIDTH:-20}"
+
+# There are two loops in this script, the first one reads updates from "xtitle"
+# only when it changes, and the update is immediate. The second loop updates
+# every second and it handles scrolling of titles that are too long. The
+# combination of these loops should give immediate response times on title
+# switches AND scrolling for long titles!
+
+# Need to add 3 to scroll width, because xtitle's truncate replaces the
+# last three characters with three dots, which we'll strip off
+xtitle -s -t "$(($SCROLL_WIDTH + 3))" |
+{
+while read title; do
+    title="${title:0:$SCROLL_WIDTH}"
+    if [[ "$title" == "" ]]; then
+        echo "TITLE"
+    else
+        echo "TITLE[ ${title} ]"
+    fi
+done
+} &
+
+i=0 
+prev_title=$(xtitle)
+while true; do
+    raw_title=$(xtitle)
+    length=${#raw_title}
+
+    if [[ $length -gt $SCROLL_WIDTH ]]; then
+        if [[ $raw_title != $prev_title ]]; then
+            # Reset the scroll if the title changed
+            i=0
+        fi
+
+        if [[ $i -le $length ]]; then 
+            # Cut off a chunk the size of the scroll window
+            visible="${raw_title:$i:$SCROLL_WIDTH}"
+
+            # Pad the leftover space once the chunk can't fill the window
+            if [[ "$(($length - $i))" -lt "$SCROLL_WIDTH" ]]; then
+                padding_amount="$(($SCROLL_WIDTH - ($length - $i)))"
+                padding=$(printf "%${padding_amount}s" " ")
+                visible="${visible}${padding}"
+            fi
+        else
+            # Title is now coming in from the right
+            visible="${raw_title:0:$(($i - $length))}"
+
+            padding_amount=$(($SCROLL_WIDTH - ($i - $length)))
+            padding=$(printf "%${padding_amount}s" " ")
+            visible="${padding}${visible}"
+        fi
+
+        # Tag it so the parser can indentify it
+        echo "TITLE[ $visible ]"
+        prev_visible="$visible"
+        prev_title="$raw_title"
+    fi
+
+    i=$((($i + 1) % ($length + $SCROLL_WIDTH)))
+    sleep 1
+done &

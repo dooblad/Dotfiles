@@ -27,6 +27,7 @@ values."
      ;; better-defaults
      emacs-lisp
      javascript
+     typescript
      html
      git
      themes-megapack
@@ -109,7 +110,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Terminus"
                                :size 16
                                :weight normal
                                :width normal

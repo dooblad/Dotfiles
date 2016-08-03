@@ -29,8 +29,9 @@ mkfifo "$PANEL_FIFO"
 # Pipe workspace information in
 bspc subscribe > "$PANEL_FIFO" &
 
-# Pipe current window title in
-xtitle -sf 'TITLE%s' > "$PANEL_FIFO" &
+export SCROLL_WIDTH="${SCROLL_WIDTH:-60}"
+
+./title_scroller > "$PANEL_FIFO" &
 
 # Pipe system information in
 conky -c ./panel_conky > "$PANEL_FIFO" &
@@ -43,14 +44,13 @@ conky -c ./panel_conky > "$PANEL_FIFO" &
 cat "$PANEL_FIFO" \
     | ./panel_parser \
     | lemonbar -g ${PANEL_GEOMETRY} \
-               -f "$FONT_NORMAL" \
-               -f "$FONT_SMALL" \
-               -f "FontAwesome" \
+               -f "$FONT_FAMILY:size=$FONT_SIZE" \
+               -f "FontAwesome:antialias=false:size=13" \
                -u $LINEHEIGHT \
                -B $COLOR_BACKGROUND \
                -F $COLOR_FOREGROUND \
     | sh &
-# Pipe from "lemonbar" to "sh", because clicking
+# We pipe from "lemonbar" to "sh", because clicking
 # buttons on the bar pipes commands to stdout, so
 # we need to execute them.
 

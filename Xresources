@@ -45,14 +45,14 @@
 
 URxvt*geometry:               112x22  
 !URxvt*font:                  xft:terminus:pixelsize=16
-URxvt*font:                   xft:DejaVu\ Sans\ Mono:pixelsize=16
+URxvt*font:                   xft:Terminus:pixelsize=16
 URXvt*letterSpace:            -1
 URXvt*lineSpace:              -1
 URxvt*scrollBar:              false
 URxvt*scrollBar_right:        true
 URxvt*scrollColor:            #000000
 URxvt*depth:                  32
-URxvt*background:             rgba:0000/0000/0600/dfff
+URxvt*background:             rgba:0000/0000/0000/dfff
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755:               false
