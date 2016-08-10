@@ -99,13 +99,13 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(jazz
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
                          leuven
-                         monokai
-                         zenburn)
+                         monokai)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -262,9 +262,16 @@ you should place you code here."
                        (cons dotspacemacs-active-transparency
                              dotspacemacs-inactive-transparency))
 
-  ;; Javascript indentation
-  (setq-default js2-basic-offset 2)
-  (setq-default js-indent-level 2)
+  ;; Web-Dev indentation
+  (setq-default
+   js2-basic-offset 2
+   js-indent-level 2
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
+
   (setq-default js2-strict-trailing-comma-warning nil)
 
   ;; Disable line wrapping

@@ -11,12 +11,12 @@ urxvtd &
 yeahconsole &
 
 # Wait for yeahconsole window id
-until id=$(xwininfo -root -tree | grep yeahconsole -B 2 | head -1 | perl -p -e 's/^ *(0x.*?) .*$/$1/g')
-do
-    sleep 1
-done
+#until id=$(xwininfo -root -tree | grep yeahconsole -B 2 | head -1 | perl -p -e 's/^ *(0x.*?) .*$/$1/g')
+#do
+#    sleep 1
+#done
 
 # Make transparent!
-xprop -id "$id" -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 3925868544
+#xprop -id "$id" -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 3925868544
 
 compton &

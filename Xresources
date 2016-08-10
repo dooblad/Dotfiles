@@ -44,7 +44,6 @@
 ! u r x v t
 
 URxvt*geometry:               112x22  
-!URxvt*font:                  xft:terminus:pixelsize=16
 URxvt*font:                   xft:Terminus:pixelsize=16
 URXvt*letterSpace:            -1
 URXvt*lineSpace:              -1
@@ -72,15 +71,24 @@ yeahconsole*consoleHeight: 10
 yeahconsole*handleWidth:   0
 yeahconsole*aniDelay:      15
 
-!-----------------------------------------------------------------------
+!------------------------------------------------------------------------------
 ! r o f i
 
-rofi.width: 300
-rofi.padding: 250
-rofi.fullscreen: true
-rofi.terminal: termite
-rofi.lines: 5
-rofi.opacity: 100
-rofi.font: Droid Sans Mono 24
-rofi.color-window: argb:aa181818, argb:aa181818, #181818
-rofi.color-normal: argb:000000, #ffffff, argb:00000000, argb:aa5A7181, #ffffff
+rofi.width:          800
+rofi.padding:        0
+rofi.fullscreen:     false
+rofi.terminal:       urxvt
+rofi.lines:          8
+rofi.opacity:        100
+rofi.font:           Terminus 16
+rofi.hide-scrollbar: true
+rofi.bw:             3
+rofi.color-window:   argb:EE1F1F1F, argb:EEC0B18B, #AF865A
+rofi.color-normal:   argb:000000, #C0B18B, argb:00000000, argb:AA4A3637, #C0B18B
+
+!------------------------------------------------------------------------------
+! d z e n 2
+
+dzen2.font:       Terminus:size=12
+dzen2.foreground: #C0B18B
+dzen2.background: #1F1F1F

@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+OPTIONS="Options:
+    --help                      Display dis.
+    -d, --duration <seconds>    How loooooong?
+    -x <px>                     Defaults to center.
+    -y <px>                     Defaults to 38px from top (idk).
+    -w, --width <px>            Defaults to 300.
+    -h, --height <px>           Defaults to 25.
+    -t, --text <display text>   Defaults to \"Farts\"
+"
+
+TEXT="Farts"
+DURATION=1
+WIDTH=300
+HEIGHT=25
+SCREEN_WIDTH=$(xrandr | grep -E '[0-9]+x[0-9]+.*\*' | cut -d x -f1)
+let "X_POS = ($SCREEN_WIDTH - $WIDTH) / 2"
+Y_POS=38
+
+while true; do
+    case "$1" in
+        --help)
+            printf "Usage: $(basename $0) [options]\n\n$OPTIONS\n\n"
+            exit 1
+            ;;
+        -d|--duration)
+            DURATION="$2"
+            shift 2
+            ;;
+        -x)
+            X_POS="$2"
+            shift 2
+            ;;
+        -y)
+            Y_POS="$2"
+            shift 2
+            ;;
+        -w|--width)
+            WIDTH="$2"
+            shift 2
+            ;;
+        -h|--height)
+            HEIGHT="$2"
+            shift 2
+            ;;
+        -t|--text)
+            TEXT="$2"
+            shift 2
+            ;;
+        "")
+            break
+            ;;
+    esac
+done
+
+echo -e "$TEXT" | dzen2 \
+    -p "$DURATION" \
+    -x "$X_POS" \
+    -y "$Y_POS" \
+    -w "$WIDTH" \
+    -h "$HEIGHT"\

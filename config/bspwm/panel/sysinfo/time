@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+date | awk '{printf "%s\n", $4}' | awk -F ':' '{printf "%s:%s\n", $1, $2}'

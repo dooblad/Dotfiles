@@ -21,7 +21,9 @@ LINEHEIGHT="2"
 PANEL_HEIGHT=28
 TOP_PADDING=5
 SIDE_PADDING=7
-PANEL_WIDTH=$(($(xrandr | grep -E '[0-9]+x[0-9]+.*\*' | cut -d x -f1) - $((${SIDE_PADDING} * 2))))
+SCREEN_WIDTH=$(xrandr | grep -E '[0-9]+x[0-9]+.*\*' | cut -d x -f1)
+PANEL_WIDTH="$(($SCREEN_WIDTH - ($SIDE_PADDING * 2)))"
+
 PANEL_GEOMETRY="${PANEL_WIDTH}x${PANEL_HEIGHT}+${SIDE_PADDING}+${TOP_PADDING}"
 
 # Monitor to display panel on
