@@ -10,7 +10,9 @@ SCROLL_WIDTH="${SCROLL_WIDTH:-20}"
 # switches AND scrolling for long titles!
 
 # Need to add 3 to scroll width, because xtitle's truncate replaces the
-# last three characters with three dots, which we'll strip off
+# last three characters with three dots, which we'll strip off. We put the
+# while loop in a subshell, so we can send it to the background and continue
+# with the rest of the script.
 xtitle -s -t "$(($SCROLL_WIDTH + 3))" |
 {
 while read title; do
@@ -54,7 +56,7 @@ while true; do
             visible="${padding}${visible}"
         fi
 
-        # Tag it so the parser can indentify it
+        # Tag it so the panel parser can indentify it
         echo "TITLE[ $visible ]"
         prev_visible="$visible"
         prev_title="$raw_title"

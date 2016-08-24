@@ -5,8 +5,8 @@ export ZSH=/home/doobs/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="random"
 ZSH_THEME="minimal"
+#ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ plugins=(git vi-mode)
 
 # User configuration
 
-export PATH="/opt/ruby/bin:/home/doobs/scripts:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/doobs/.gem/ruby/2.3.0/bin"
+export PATH="/opt/ruby/bin:/home/doobs/scripts:/home/doobs/opt/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/doobs/.gem/ruby/2.3.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

@@ -29,6 +29,7 @@ values."
      javascript
      typescript
      html
+     python
      git
      themes-megapack
      ;; markdown
