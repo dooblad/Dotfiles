@@ -34,4 +34,5 @@ done <<< "$CALENDAR"
 # Strip off extra newline
 result="$(echo -n "$result")"
 
-./popup --text "$result" --width 200 -x $((1366 - 200 - 7))
+SCREEN_WIDTH=$(xrandr | grep -E '[0-9]+x[0-9]+.*\*' | cut -d x -f1)
+./popup --text "$result" --width 200 -x $(($SCREEN_WIDTH - 200 - 7))

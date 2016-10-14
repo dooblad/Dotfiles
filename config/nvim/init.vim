@@ -92,24 +92,6 @@ endfunction
 " ‾‾‾‾‾‾‾"
 let g:gpg_user_name = "Doobs Parn"
 
-" ____________________"
-" | CTags Generation | "
-" ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾"
-
-" TODO: Write a function that detects
-" a .tagrc file that specifies config
-" about if/how a directory should have
-" tags generated for it.
-function! CreateTagsRC()
-endfunction
-
-let g:atags_build_commands_list = [
-            \ ''
-            \ ]
-
-" Generate ctags on buffer write
-"autocmd BufWritePost * call atags#generate()
-
 " _______________________________ "
 " | Magic That Makes Paste Work | "
 " ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾ "
@@ -263,6 +245,9 @@ nnoremap c "_c
 
 " Stay in place while joining lines
 nnoremap J mzJ`z
+
+" Use arrow key as shortcut for field dereferencing in C
+inoremap <right> ->
 
 " Use arrow keys for buffer resizing
 nnoremap <silent> <Left> :vertical resize +2<CR>

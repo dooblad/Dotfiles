@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-xrandr --output eDP1 --auto --primary
-xrandr --output HDMI1 --auto --above eDP1
+#xrandr --output eDP1 --auto --primary
+#xrandr --output HDMI1 --auto --above eDP1
 
 # Load custom key mappings.
 #if [ -s ~/.Xmodmap ]; then
