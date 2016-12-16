@@ -3,6 +3,7 @@
 # Change to the current directory
 cd $(dirname $0)
 
+#LOW_BATTERY=false
 while true; do
     # Use a short variable name since bash append syntax is clunky
     S="SYS%{B#4A3637} "
@@ -11,6 +12,11 @@ while true; do
     S="${S}MEM: $(./memory)"
     S="${S} %{F#AF865A}/%{F-} "
     S="${S}BAT: $(./battery) "
+    #BATTERY_PERCENT=$(./battery)
+    #S="${S}BAT: $BATTERY_PERCENT "
+    #if [ "${BATTERY_PERCENT/\%/}" -lt 15 ] && []; then
+    #    echo
+    #fi
     S="${S}%{B#AF865A}%{F#4A3637}"
     S="${S} %{A:$HOME/.config/bspwm/panel/popups/calendar:}$(./time)%{A} "
     S="${S}%{F-}%{B-}"

@@ -44,7 +44,7 @@
 ! u r x v t
 
 URxvt*geometry:               112x22  
-URxvt*font:                   xft:Terminus:pixelsize=16
+URxvt*font:                   xft:Terminus:pixelsize=20
 URXvt*letterSpace:            -1
 URXvt*lineSpace:              -1
 URxvt*scrollBar:              false
@@ -58,6 +58,7 @@ URxvt.iso14755:               false
 URxvt.perl-ext-common:        default,clipboard
 URxvt.url-select.launcher:    chromium
 URxvt.url-select.underline:   true
+URxvt.cursorColor:            #666
 
 
 !------------------------------------------------------------------------------

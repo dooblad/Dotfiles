@@ -42,7 +42,7 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-commentary')
 
 " Syntaxxxxx
-"call dein#add('neomake/neomake')
+" call dein#add('scrooloose/syntastic')
 
 " i3 config
 call dein#add('PotatoesMaster/i3-vim-syntax')
@@ -54,15 +54,11 @@ call dein#add('junegunn/limelight.vim')
 " Bow to the PEP8 overlords
 call dein#add('klen/python-mode')
 
-" Help me cope with the shitshow that is
-" JavaScript
-call dein#add('pangloss/vim-javascript')
+" C++ syntax highlighting
+call dein#add('octol/vim-cpp-enhanced-highlight')
 
-" Asynchronous tags generation
-call dein#add('fntlnz/atags.vim')
-
-" For local testing
-call dein#local("~/.config/nvim/plugins/local")
+" Vim Wiki
+call dein#add('vimwiki/vimwiki')
 
 call dein#end()
 
@@ -116,6 +112,18 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" _____________ "
+" | Syntastic | "
+" ‾‾‾‾‾‾‾‾‾‾‾‾‾ "
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " __________ "
 " | Python | "

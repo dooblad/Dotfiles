@@ -3,8 +3,9 @@
 #
 
 # terminal emulator
+#   urxvt
 super + Return
-	urxvt
+	termite
 
 # program launcher
 super + r
