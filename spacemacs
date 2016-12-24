@@ -298,6 +298,8 @@ you should place you code here."
   ;; Use the k&r style wherever applicable
   ;; TODO: Figure out why this line breaks all mah shit
   ;; (push '(other . "k&r") c-default-style)
+
+  (setq read-quoted-char-radix 16)
   )
 
 
