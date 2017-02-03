@@ -14,7 +14,7 @@ while true; do
     S="${S}BAT: "
     # Actually tell us if the battery is gonna die soon. Revolutionary!
     BATTERY_PERCENT=$(./battery)
-    if [ "${BATTERY_PERCENT/\%/}" -le 10 ]; then
+    if [ "${BATTERY_PERCENT/\%/}" -le 20 ]; then
         S="${S}%{F#FF0000}"
         if [ "$LOW_BATTERY" = false ]; then
             $HOME/.config/bspwm/panel/popups/alert --text "Low Battery, bruh" --duration 3 &

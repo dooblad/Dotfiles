@@ -1,6 +1,7 @@
 [options]
 
-font = Monospace 14
+# font = Monospace 14
+font = Terminus 14
 
 [colors]
 

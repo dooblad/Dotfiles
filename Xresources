@@ -65,6 +65,7 @@ URxvt.cursorColor:            #666
 ! y e a h c o n s o l e
 
 yeahconsole*term:          urxvtc
+! yeahconsole*term:          termite
 yeahconsole*toggleKey:     Win+e
 yeahconsole*keyBigger:     WinControl+e
 yeahconsole*keySmaller:    WinControlAlt+e

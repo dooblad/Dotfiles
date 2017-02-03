@@ -83,6 +83,17 @@ function! s:color_set()
     colorscheme mod8
 endfunction
 
+" ____________ "
+" | VIM WIKI | "
+" ‾‾‾‾‾‾‾‾‾‾‾‾ "
+" TODO: This not werk
+" hi VimwikiHeader1 guifg=#FF0000
+" hi VimwikiHeader2 guifg=#00FF00
+" hi VimwikiHeader3 guifg=#0000FF
+" hi VimwikiHeader4 guifg=#FF00FF
+" hi VimwikiHeader5 guifg=#00FFFF
+" hi VimwikiHeader6 guifg=#FFFF00
+
 " _______"
 " | GPG |"
 " ‾‾‾‾‾‾‾"
@@ -116,14 +127,14 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 " _____________ "
 " | Syntastic | "
 " ‾‾‾‾‾‾‾‾‾‾‾‾‾ "
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " __________ "
 " | Python | "
@@ -156,7 +167,6 @@ let g:limelight_default_coefficient = 0.8
 " ________ "
 " | Goyo | "
 " ‾‾‾‾‾‾‾‾ "
-
 function! s:goyo_enter()
     let b:quitting = 0
     let b:quitting_bang = 0

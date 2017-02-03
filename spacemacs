@@ -299,7 +299,11 @@ you should place you code here."
   ;; TODO: Figure out why this line breaks all mah shit
   ;; (push '(other . "k&r") c-default-style)
 
+  ;; For putting in hexadecimal unicode.
   (setq read-quoted-char-radix 16)
+
+  ;; Remove parentheses completion.
+  (remove-hook 'prog-mode-hook #'smartparens-mode)
   )
 
 
