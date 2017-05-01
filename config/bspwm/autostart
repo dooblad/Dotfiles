@@ -9,7 +9,8 @@ urxvtd &
 
 compton &
 
-syndaemon -i 0.5 -t -K -R &
+# Prevent mouse clicks while typing
+syndaemon -i 0.25 -t -K -R &
 
 # Wait a lil bit so yeahconsole can start correctly (doesn't work sometimes if
 # we don't wait)

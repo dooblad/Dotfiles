@@ -1,7 +1,7 @@
 [options]
 
 # font = Monospace 14
-font = Terminus 14
+font = xos4 Terminus 16px
 
 [colors]
 

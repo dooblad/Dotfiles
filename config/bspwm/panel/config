@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FONT_FAMILY="Terminus"
+FONT_FAMILY="xos4 Terminus"
 FONT_SIZE="12"
 
 COLOR_FOREGROUND="#FFC0B18B"

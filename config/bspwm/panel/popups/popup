@@ -10,6 +10,7 @@ OPTIONS="Options:
 "
 
 TEXT="Farts"
+FONT="xos4 Terminus"
 WIDTH=300
 HEIGHT=25
 SCREEN_WIDTH=$(xrandr | grep -E '[0-9]+x[0-9]+.*\*' | cut -d x -f1)
@@ -64,6 +65,7 @@ echo -e "$TEXT" | dzen2 \
     -e "button1=exit;onstart=uncollapse" \
     -ta "c" \
     -sa "c" \
+    -fn "$FONT" \
     -x "$X_POS" \
     -y "$Y_POS" \
     -w "$WIDTH" \

@@ -43,29 +43,27 @@
 !------------------------------------------------------------------------------
 ! u r x v t
 
-URxvt*geometry:               112x22  
-URxvt*font:                   xft:Terminus:pixelsize=20
-URXvt*letterSpace:            -1
-URXvt*lineSpace:              -1
-URxvt*scrollBar:              false
-URxvt*scrollBar_right:        true
-URxvt*scrollColor:            #000000
-URxvt*depth:                  32
-URxvt*background:             rgba:0000/0000/0000/dfff
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.iso14755:               false
-URxvt.perl-ext-common:        default,clipboard
-URxvt.url-select.launcher:    chromium
-URxvt.url-select.underline:   true
-URxvt.cursorColor:            #666
-
+! URxvt*geometry:               112x22  
+! URxvt*font:                   xft:Terminus:style=bold:pixelsize=12
+! URXvt*letterSpace:            -1
+! URXvt*lineSpace:              -1
+! URxvt*scrollBar:              false
+! URxvt*scrollBar_right:        true
+! URxvt*scrollColor:            #000000
+! URxvt*depth:                  32
+! URxvt*background:             rgba:0000/0000/0000/dfff
+! URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+! URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+! URxvt.iso14755:               false
+! URxvt.perl-ext-common:        default,clipboard
+! URxvt.url-select.launcher:    chromium
+! URxvt.url-select.underline:   true
+! URxvt.cursorColor:            #666
 
 !------------------------------------------------------------------------------
 ! y e a h c o n s o l e
 
-yeahconsole*term:          urxvtc
-! yeahconsole*term:          termite
+yeahconsole*term:          termite
 yeahconsole*toggleKey:     Win+e
 yeahconsole*keyBigger:     WinControl+e
 yeahconsole*keySmaller:    WinControlAlt+e
@@ -91,6 +89,5 @@ rofi.color-normal:   argb:000000, #C0B18B, argb:00000000, argb:FF4A3637, #C0B18B
 !------------------------------------------------------------------------------
 ! d z e n 2
 
-dzen2.font:       Terminus:size=12
 dzen2.foreground: #C0B18B
 dzen2.background: #1F1F1F
