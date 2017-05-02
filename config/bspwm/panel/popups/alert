@@ -11,6 +11,7 @@ OPTIONS="Options:
 "
 
 TEXT="Farts"
+FONT="xos4 Terminus"
 DURATION=1
 WIDTH=300
 HEIGHT=25
@@ -56,6 +57,7 @@ done
 
 echo -e "$TEXT" | dzen2 \
     -p "$DURATION" \
+    -fn "$FONT" \
     -x "$X_POS" \
     -y "$Y_POS" \
     -w "$WIDTH" \

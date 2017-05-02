@@ -41,26 +41,6 @@
 *color15: #888888
 
 !------------------------------------------------------------------------------
-! u r x v t
-
-! URxvt*geometry:               112x22  
-! URxvt*font:                   xft:Terminus:style=bold:pixelsize=12
-! URXvt*letterSpace:            -1
-! URXvt*lineSpace:              -1
-! URxvt*scrollBar:              false
-! URxvt*scrollBar_right:        true
-! URxvt*scrollColor:            #000000
-! URxvt*depth:                  32
-! URxvt*background:             rgba:0000/0000/0000/dfff
-! URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-! URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-! URxvt.iso14755:               false
-! URxvt.perl-ext-common:        default,clipboard
-! URxvt.url-select.launcher:    chromium
-! URxvt.url-select.underline:   true
-! URxvt.cursorColor:            #666
-
-!------------------------------------------------------------------------------
 ! y e a h c o n s o l e
 
 yeahconsole*term:          termite
@@ -80,7 +60,7 @@ rofi.fullscreen:     false
 rofi.terminal:       urxvt
 rofi.lines:          8
 rofi.opacity:        100
-rofi.font:           Terminus 16
+rofi.font:           xos4 Terminus 16
 rofi.hide-scrollbar: true
 rofi.bw:             3
 rofi.color-window:   argb:EE1F1F1F, argb:EEC0B18B, #AF865A
