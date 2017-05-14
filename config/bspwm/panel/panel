@@ -1,45 +1,42 @@
 #!/usr/bin/env bash
 
-# Change to the current directory
+# Change to the current directory.
 cd $(dirname $0)
 
-# We use this temporary file 
-# to pipe information into 
-# while lemonbar reads it in
+# We use this temporary file to pipe information into while lemonbar reads it
+# in.
 PANEL_FIFO=/tmp/panel-fifo
 
-# Initialize config variables
+# Initialize config variables.
 source ./config
 
-# Check if we're already running
+# Check if we're already running.
 if [ $(pgrep -cx panel) -gt 1 ] ; then
     printf "%s\n" "The panel is already running." >&2
     exit 1
 fi
 
-# IDK
+# IDK.
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
-# Remove any previous FIFO queues using "$PANEL_FIFO"
+# Remove any previous FIFO queues using "$PANEL_FIFO".
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 
-# Create our FIFO queue
+# Create our FIFO queue.
 mkfifo "$PANEL_FIFO"
 
-# Pipe workspace information in
+# Pipe workspace information in.
 bspc subscribe > "$PANEL_FIFO" &
 
 export SCROLL_WIDTH="${SCROLL_WIDTH:-60}"
 
 ./title_scroller > "$PANEL_FIFO" &
 
-# Pipe system information in
+# Pipe system information in.
 ./sysinfo/sysinfo > "$PANEL_FIFO" &
 
-# While "$PANEL_FIFO" is being added to,
-# "./panel_parser" reads from it, parses
-# it (using the tags that are prepended
-# to each chunk), then pipes the result
+# While "$PANEL_FIFO" is being added to, "./panel_parser" reads from it, parses
+# it (using the tags that are prepended to each chunk), then pipes the result
 # to "lemonbar".
 cat "$PANEL_FIFO" \
     | ./panel_parser \
@@ -51,10 +48,9 @@ cat "$PANEL_FIFO" \
                -B $COLOR_BACKGROUND \
                -F $COLOR_FOREGROUND \
     | sh &
-# We pipe from "lemonbar" to "sh", because clicking
-# buttons on the bar pipes commands to stdout, so
-# we need to execute them.
+# We pipe from "lemonbar" to "sh", because clicking buttons on the bar pipes
+# commands to stdout, so we need to execute them.
 
-# "Wait" until all these background scripts finish... they won't, 
-# but what Bash doesn't know, won't hurt it.
+# "Wait" until all these background scripts finish... they won't, but what Bash
+# doesn't know, won't hurt it.
 wait

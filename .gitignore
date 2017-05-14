@@ -4,13 +4,12 @@ config/QtProject.conf
 config/Skype
 config/Trolltech.conf
 config/blockify
+config/configstore/
 config/dconf
 config/enchant/
 config/gedit
 config/inkscape/
-config/menus
-config/menus/applications-merged
-config/menus/applications-merged/user-chrome-apps.menu
+config/menus/
 config/nvim/plugins
 config/pulse
 config/ranger

@@ -1,30 +1,30 @@
 #!/usr/bin/env bash
 
-FONT_FAMILY="xos4 Terminus"
-FONT_SIZE="12"
+readonly FONT_FAMILY="xos4 Terminus"
+readonly FONT_SIZE="12"
 
-COLOR_FOREGROUND="#FFC0B18B"
-COLOR_BACKGROUND="#FF1F1F1F"
+readonly COLOR_FOREGROUND="#FFC0B18B"
+readonly COLOR_BACKGROUND="#FF1F1F1F"
 
 # Lemonbar workspace colors
-COLOR_ACTIVE="$COLOR_FOREGROUND"
-COLOR_OCCUPIED="#FFAF865A"
-COLOR_URGENT="#FFD17B49"
-COLOR_FREE="#FF4A3637"
+readonly COLOR_ACTIVE="$COLOR_FOREGROUND"
+readonly COLOR_OCCUPIED="#FFAF865A"
+readonly COLOR_URGENT="#FFD17B49"
+readonly COLOR_FREE="#FF4A3637"
 
-COLOR_LAYOUT_INFO="#FF4A3637"
+readonly COLOR_LAYOUT_INFO="#FF4A3637"
 
 # Height of underlines / overlines
-LINEHEIGHT="2"
+readonly LINEHEIGHT="2"
 
 # Panel geometry
-PANEL_HEIGHT=28
-TOP_PADDING=5
-SIDE_PADDING=7
-SCREEN_WIDTH=$(xrandr | grep -E '[0-9]+x[0-9]+.*\*' | cut -d x -f1)
-PANEL_WIDTH="$(($SCREEN_WIDTH - ($SIDE_PADDING * 2)))"
+readonly PANEL_HEIGHT=28
+readonly TOP_PADDING=3
+readonly SIDE_PADDING=7
+readonly SCREEN_WIDTH=$(xrandr | grep -o "current [0-9]\+ x [0-9]\+" | cut --delimiter=" " --fields=2)
+readonly PANEL_WIDTH="$(($SCREEN_WIDTH - ($SIDE_PADDING * 2)))"
 
-PANEL_GEOMETRY="${PANEL_WIDTH}x${PANEL_HEIGHT}+${SIDE_PADDING}+${TOP_PADDING}"
+readonly PANEL_GEOMETRY="${PANEL_WIDTH}x${PANEL_HEIGHT}+${SIDE_PADDING}+${TOP_PADDING}"
 
 # Monitor to display panel on
 MONITOR="$(bspc query -M | tail -n1)"

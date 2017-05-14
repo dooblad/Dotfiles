@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OPTIONS="Options:
+readonly OPTIONS="Options:
     --help                      Display dis.
     -d, --duration <seconds>    How loooooong?
     -x <px>                     Defaults to center.
@@ -9,15 +9,19 @@ OPTIONS="Options:
     -h, --height <px>           Defaults to 25.
     -t, --text <display text>   Defaults to \"Farts\"
 "
+readonly FONT="xos4 Terminus"
 
-TEXT="Farts"
-FONT="xos4 Terminus"
-DURATION=1
-WIDTH=300
-HEIGHT=25
-SCREEN_WIDTH=$(xrandr | grep -E '[0-9]+x[0-9]+.*\*' | cut -d x -f1)
-let "X_POS = ($SCREEN_WIDTH - $WIDTH) / 2"
-Y_POS=38
+id=""
+text="Farts"
+duration=1
+width=200
+height=25
+screen_width=$(xrandr | grep -o "current [0-9]\+ x [0-9]\+" | cut --delimiter=" " --fields=2)
+let "x_pos = ($screen_width - $width) / 2"
+y_pos=38
+
+echo "$screen_width"
+echo "$width"
 
 while true; do
     case "$1" in
@@ -25,28 +29,32 @@ while true; do
             printf "Usage: $(basename $0) [options]\n\n$OPTIONS\n\n"
             exit 1
             ;;
-        -d|--duration)
-            DURATION="$2"
-            shift 2
-            ;;
-        -x)
-            X_POS="$2"
-            shift 2
-            ;;
-        -y)
-            Y_POS="$2"
-            shift 2
-            ;;
-        -w|--width)
-            WIDTH="$2"
-            shift 2
-            ;;
-        -h|--height)
-            HEIGHT="$2"
+        --id)
+            id="$2"
             shift 2
             ;;
         -t|--text)
-            TEXT="$2"
+            text="$2"
+            shift 2
+            ;;
+        -d|--duration)
+            duration="$2"
+            shift 2
+            ;;
+        -x)
+            x_pos="$2"
+            shift 2
+            ;;
+        -y)
+            y_pos="$2"
+            shift 2
+            ;;
+        -w|--width)
+            width="$2"
+            shift 2
+            ;;
+        -h|--height)
+            height="$2"
             shift 2
             ;;
         "")
@@ -55,10 +63,50 @@ while true; do
     esac
 done
 
-echo -e "$TEXT" | dzen2 \
-    -p "$DURATION" \
+if [[ id != "" ]]; then
+    # Kill other open instances that share "id".
+    instances=$(ls -1 /tmp | grep "^${id}")
+    while read -r instance; do
+        if [[ "$instance" != "" ]]; then
+            pid=$(cat "/tmp/$instance")
+            # Wait a small delay before killing old ones, so shit don't look
+            # choppy.
+            (sleep 0.1 && kill -9 "$pid" 2> /dev/null) &
+            rm "/tmp/$instance"
+        fi
+    done <<< "$instances"
+
+    # Put our PID in a temp file, so we may one day be killed as well.
+    temp_file=$(mktemp "/tmp/${id}.XXXXXXXX")
+    echo "$$" > "$temp_file"
+fi
+
+echo -e "$text" | dzen2 \
+    -p "$duration" \
     -fn "$FONT" \
-    -x "$X_POS" \
-    -y "$Y_POS" \
-    -w "$WIDTH" \
-    -h "$HEIGHT"\
+    -x "$x_pos" \
+    -y "$y_pos" \
+    -w "$width" \
+    -h "$height" &
+pid="$!"
+
+if [[ id != "" ]]; then
+    # Put our PID in a temp file, so we may one day be killed as well.
+    temp_file=$(mktemp "/tmp/${id}.XXXXXXXX")
+    echo "$pid" > "$temp_file"
+fi
+
+# Kill dzen2 when we (the parent script are
+# killed).
+function cleanup() {
+    kill -9 "$pid" 2> /dev/null
+    if [[ id != "" ]]; then
+        rm "$temp_file" 2> /dev/null
+    fi
+}
+trap cleanup INT
+
+# Wait for dzen2 to finish.
+wait
+
+cleanup

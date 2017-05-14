@@ -26,8 +26,9 @@ while true; do
     esac
 done
 
+amixer sset Master "$CHANGE" &> /dev/null
+VOLUME="$(amixer sget Master "$CHANGE" | grep -o '\([0-9]\)\{1,2\}%' | head -1)"
+TEXT="Volume: $VOLUME"
+echo "$TEXT"
 
-VOLUME="$(amixer sset Master playback "$CHANGE" | grep -o '\([0-9]\)\{1,2\}%')"
-TEXT="Volume: ${VOLUME}"
-
-./alert --text "$TEXT"
+./alert --text "$TEXT" --id "volume"
