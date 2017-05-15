@@ -19,7 +19,6 @@ bspc config gapless_monocle       true
 bspc config focus_by_distance     true
 
 bspc monitor eDP1 -n 0 -d I II III IV V VI VII VIII IX X
-
 # bspc monitor HDMI1 -n 1 -d IX X
 
 bspc rule -a Gimp desktop=^8 follow=on floating=on
@@ -30,3 +29,4 @@ bspc rule -a Screenkey manage=off
 
 $HOME/.config/bspwm/autostart
 $HOME/.config/bspwm/panel/panel &
+

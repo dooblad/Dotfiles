@@ -6,24 +6,7 @@ sxhkd &
 redshift &
 dropbox &
 urxvtd &
-
 compton &
 
 # Prevent mouse clicks while typing
 syndaemon -i 0.25 -t -K -R &
-
-# Wait a lil bit so yeahconsole can start correctly (doesn't work sometimes if
-# we don't wait)
-sleep 5
-
-yeahconsole &
-
-# TODO: Pull into "yeahconsole_transparency" script
-# Wait for yeahconsole window id
-sleep 10
-until id=$(xwininfo -root -tree | grep yeahconsole -B 2 | head -1 | perl -p -e 's/^ *(0x.*?) .*$/$1/g')
-do
-    sleep 1
-done
-# Make transparent!
-xprop -id "$id" -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 3925868544
