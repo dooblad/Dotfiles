@@ -375,13 +375,16 @@ you should place your code here."
          (get-buffer-process (current-buffer))
          nil "_"))))
 
-  ;; No line-wrapping.
-  (setq-default truncate-lines t)
-
   ;; Default to C++ in header files.
   (setq-default dotspacemacs-configuration-layers
                 '((c-c++ :variables
                          c-c++-default-mode-for-headers 'c++-mode)))
+  ;; Enable Clang for formatting.
+  (setq-default dotspacemacs-configuration-layers
+                '((c-c++ :variables c-c++-enable-clang-support t)))
+
+  ;; No line-wrapping.
+  (setq-default truncate-lines t)
 
   ;; Save muh sessions.
   (desktop-save-mode 1)
