@@ -122,8 +122,10 @@ super + alt + shift + {h,j,k,l}
 	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
 
 # move a floating window
+#super + {Left,Down,Up,Right}
+#	xdo move {-x -20,-y +20,-y -20,-x +20}
 super + {Left,Down,Up,Right}
-	xdo move {-x -20,-y +20,-y -20,-x +20}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 #
 # pointer focus/move/resize
@@ -162,37 +164,3 @@ XF86MonBrightnessDown
 # lock computer using i3lock-fancy
 ctrl + alt + l
 	lock --pixelate --font 'Terminus-(TTF)'
-
-#
-# dropdown terminal shit
-#
-
-# convert focused window to scratchpad
-super + shift + e
-    id=$(bspc query -N -n "focused");\
-    if [ -n "$id" ];then \
-        xprop -id $id -f _SCRATCH 32ii -set _SCRATCH $(date +%s,%N);\
-        bspc node -t "floating";\
-        xdotool windowunmap $id;\
-    fi
-
-# toggle scratchpad
-super + e
-    i=$(bspc query -N -n "focused.floating");\
-    if [ -n "$i" ];then \
-        xprop -id $i -f _SCRATCH 32ii -set _SCRATCH $(date +%s,%N);\
-        xdotool windowunmap $i;\
-    else;\
-        i=$(for w in $(xwininfo -root -children | grep -e "^\s*0x[0-9a-f]\+" -o);do \
-            t=$(xprop -id $w _SCRATCH | grep ' = \(.*\)');\
-            if [ -n "$t" ];then \
-                echo $t $w;\
-            fi;\
-        done|sort -n|head -n1|cut -d" " -f 5);\
-        if [ -n "$i" ];then \
-            xprop -id $i -remove _SCRATCH;\
-            bspc rule -a \* state=floating --one-shot;\
-            xdotool windowmap $i;\
-            bspc node -f $i;\
-        fi;\
-    fi

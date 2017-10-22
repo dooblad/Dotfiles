@@ -14,5 +14,9 @@ nnoremap <Leader>k {
 nnoremap <Leader>h ^
 nnoremap <Leader>l $
 
+" Relative numbering and absolute.
+set number
+set relativenumber
+
 " Fuck the placement of the escape key.
 inoremap jk <ESC>

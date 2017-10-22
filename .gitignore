@@ -1,5 +1,6 @@
 BitchX/BitchX.away
 chromium/
+config/Code
 config/QtProject.conf
 config/Skype
 config/Trolltech.conf
@@ -7,6 +8,7 @@ config/blockify
 config/configstore/
 config/dconf
 config/enchant/
+config/gconf
 config/gedit
 config/inkscape/
 config/menus/

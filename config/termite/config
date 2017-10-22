@@ -1,51 +1,42 @@
 [options]
-
-# font = Monospace 14
 font = xos4 Terminus 16px
 
 [colors]
 
 # special
+foreground      = #c5c8c6
+foreground_bold = #c5c8c6
+cursor          = #ffffff
 background = rgba(0, 0, 0, 0.88)
-foreground = #777777
-#foreground_bold = #C5C8C6
-cursor = #FFFFFF
-
 
 # black
-color0 = #222222
-color8 = #222222
+color0  = #282a2e
+color8  = #373b41
 
 # red
-color1 = #9f6767
-color9 = #9f6767
+color1  = #a54242
+color9  = #cc6666
 
 # green
-color2 = #92ac68
-color10 = #92ac68
+color2  = #8c9440
+color10 = #b5bd68
 
 # yellow
-color3 = #d0d293
-color11 = #d0d293
+color3  = #de935f
+color11 = #f0c674
 
 # blue
-color4 = #9aacc3
-color12 = #9aacc3
+color4  = #5f819d
+color12 = #81a2be
 
 # magenta
-color5 = #bb77a4
-color13 = #bb77a4
+color5  = #85678f
+color13 = #b294bb
 
 # cyan
-color6 = #77bbb5
-color14 = #77bbb5
+color6  = #5e8d87
+color14 = #8abeb7
 
 # white
-color7 = #666666
-color15 = #888888
-
-[hints]
-
-# border
-#border = #3f3f3f
-#border-width = 1
+color7  = #707880
+color15 = #c5c8c6

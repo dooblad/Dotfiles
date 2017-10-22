@@ -50,8 +50,19 @@ plugins=(git vi-mode)
 
 # User configuration
 
-export PATH="/opt/ruby/bin:/home/doobs/scripts:/home/doobs/opt/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/doobs/.gem/ruby/2.3.0/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/home/doobs/scripts"
+export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:/usr/local/bin"
+export PATH="$PATH:/usr/bin"
+export PATH="$PATH:/usr/lib/jvm/default/bin"
+export PATH="$PATH:/usr/bin/site_perl"
+export PATH="$PATH:/usr/bin/vendor_perl"
+export PATH="$PATH:/usr/bin/core_perl"
+export PATH="$PATH:/home/doobs/.gem/ruby/2.3.0/bin"
+export PATH="$PATH:/opt/ruby/bin"
+export PATH="$PATH:/home/doobs/bin"
+export PATH="$PATH:/opt/vs-code/bin"
+export PATH="$PATH:/opt/leanup/lean_install/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,3 +82,6 @@ export EDITOR='nvim'
 
 # Basically, 'inoremap jk <ESC>'
 bindkey -M viins 'jk' vi-cmd-mode
+
+# To make Java applications just fucking work (blank GUI)
+source /etc/profile.d/jre.sh

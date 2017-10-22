@@ -60,6 +60,9 @@ call dein#add('octol/vim-cpp-enhanced-highlight')
 " Vim Wiki
 call dein#add('vimwiki/vimwiki')
 
+" Rust
+call dein#add('rust-lang/rust.vim')
+
 call dein#end()
 
 " Re-enable filetype plugins
@@ -258,8 +261,8 @@ set autoread
 " ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾ "
 " Prevent 'x' and 'c' from overwriting
 " yank register.
-nnoremap x "_x
-nnoremap c "_c
+"nnoremap x "_x
+"nnoremap c "_c
 
 " Stay in place while joining lines
 nnoremap J mzJ`z
