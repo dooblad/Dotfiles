@@ -65,11 +65,10 @@ call dein#add('rust-lang/rust.vim')
 
 call dein#end()
 
-" Re-enable filetype plugins
+" Re-enable filetype plugins.
 filetype plugin indent on
 
-" If you want to install not 
-" installed plugins on startup.
+" If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
@@ -80,22 +79,25 @@ endif
 " |‾‾‾‾‾‾‾‾| "
 " ‾‾‾‾‾‾‾‾‾‾ "
 
-" Call this function when [re]setting colors
+" Call this function when [re]setting colors.
 function! s:color_set()
     set background=dark
     colorscheme mod8
 endfunction
 
-" ____________ "
-" | VIM WIKI | "
-" ‾‾‾‾‾‾‾‾‾‾‾‾ "
-" TODO: This not werk
-" hi VimwikiHeader1 guifg=#FF0000
-" hi VimwikiHeader2 guifg=#00FF00
-" hi VimwikiHeader3 guifg=#0000FF
-" hi VimwikiHeader4 guifg=#FF00FF
-" hi VimwikiHeader5 guifg=#00FFFF
-" hi VimwikiHeader6 guifg=#FFFF00
+" _______________________ "
+" | Trailing Whitespace | "
+" ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾ "
+" Highlight trailing whitespace.
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" Remove trailing whitespace.
+autocmd FileType tex,sh,v,ml autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " _______"
 " | GPG |"
@@ -127,29 +129,17 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-" _____________ "
-" | Syntastic | "
-" ‾‾‾‾‾‾‾‾‾‾‾‾‾ "
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
 " __________ "
 " | Python | "
 " ‾‾‾‾‾‾‾‾‾‾ "
-" Let python-mode take care of indentation
+" Let python-mode take care of indentation.
 let g:pymode_indent = 1
 
-" Don't bother with errors while typing (only on save)
+" Don't bother with errors while typing (only on save).
 let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_fly = 0
 
-" Don't open a little window for every error
+" Don't open a little window for every error.
 let g:pymode_lint_cwindow = 0
 
 " Say no to automatic auto-completion!
@@ -176,14 +166,14 @@ function! s:goyo_enter()
     autocmd QuitPre <buffer> let b:quitting = 1
     cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
 
-    " Center the cursor on the screen
+    " Center the cursor on the screen.
     set scrolloff=999
 
     Limelight
 endfunction
 
 function! s:goyo_leave()
-	" Quit Vim if this is the only remaining buffer
+	" Quit Vim if this is the only remaining buffer.
 	if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
 		if b:quitting_bang
 			qa!
@@ -207,87 +197,81 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " ___________ "
 " | General | "
 " ‾‾‾‾‾‾‾‾‾‾‾ "
-" Vim tabs are LAAAAAAAME
+" Vim tabs are LAAAAAAAME.
 set showtabline=0
 
-set incsearch       " Allows for realtime regex testing
+" Allows for realtime regex testing.
+set incsearch
 set ignorecase
-set smartcase       " Override 'ignorecase' if search contains capitals
+" Override 'ignorecase' if search contains capitals.
+set smartcase
 set nohlsearch
 
 " Don't close buffers when you move away from them for a sec...
-" Just hide 'em!
+" just hide 'em!
 set hidden
 
 " QUIT INSERTING COMMENTS!
 autocmd FileType * silent setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Set syntax highlighting
+" Set syntax highlighting.
 syntax on
 
 " Relative line numbering on the left-hand side and absolute numbering on the
-" current line
+" current line.
 set relativenumber
 set number
 
-" Expands tabs into spaces for better cross-platform viewing
+" Expands tabs into spaces for better cross-platform viewing.
 set expandtab
 
 " Indentation preferences
 set autoindent
 set nosmartindent
 
-" No more jerking the page halfway over for text that extends
-" beyond the screen width
+" No more jerking the page halfway over for text that extends beyond the
+" screen width.
 set sidescroll=1
 
-" Fuck line wrapping
+" Fuck line wrapping.
 set nowrap
 set wrapmargin=0
 set textwidth=0
 
-" Default tab behaviors for unknown filetypes
+" Default tab behaviors for unknown filetypes.
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" Reload buffer if file has been externally modified
+" Reload buffer if file has been externally modified.
 set autoread
+
+" Move Vim turds (swapfiles) into a single directory away from the current
+" directory.
+set directory=$HOME/.config/nvim/swap
 
 " ________________ "
 " |______________| "
 " | KEY BINDINGS | "
 " |‾‾‾‾‾‾‾‾‾‾‾‾‾‾| "
 " ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾ "
-" Prevent 'x' and 'c' from overwriting
-" yank register.
-"nnoremap x "_x
-"nnoremap c "_c
-
-" Stay in place while joining lines
+" Stay in place while joining lines.
 nnoremap J mzJ`z
 
-" Use arrow key as shortcut for field dereferencing in C
-inoremap <right> ->
-
-" Use arrow keys for buffer resizing
+" Use arrow keys for buffer resizing.
 nnoremap <silent> <Left> :vertical resize +2<CR>
 nnoremap <silent> <Right> :vertical resize -2<CR>
 nnoremap <silent> <Up> :resize -2<CR>
 nnoremap <silent> <Down> :resize +2<CR>
 
-" Space is your leader
+" Space is your leader.
 let mapleader = " "
-
-" Larger movements with leader prefix
-nnoremap <Leader>h ^
-nnoremap <Leader>l $
 
 " Previous buffer (similar to Tmux)
 nnoremap <silent> <Leader><Tab> :b#<CR>
 
 " Shift tab goes backwards on the location stack.
-" Tab goes forwards.
+" Cuz tab goes forwards.
 nnoremap <S-tab> <C-o>
 
 " Easier split maneuvering
@@ -300,10 +284,10 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <Leader>\ :vs<CR>
 nnoremap <Leader>- :sp<CR>
 
-" Fuck the placement of the escape key
+" Fuck the placement of the escape key.
 inoremap jk <ESC>
 
-" Use Ctrl-n to open up NerdTree
+" Use Ctrl-n to open up NerdTree.
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Buffer navigation
@@ -326,30 +310,27 @@ nnoremap <Leader>gd :Gvdiff<CR>
 nnoremap <Leader>gm :Gmove 
 nnoremap <Leader>gr :Gremove 
 
-" Backtick tracks column position, but
-" it's further away. So swap 'em.
+" Backtick tracks column position, but it's further away. So swap 'em.
 nnoremap ` '
 nnoremap ' `
 
 " Shitty brace completion
 inoremap {<CR> {<CR>}<ESC>O
 
-" [E]dit my .[v]imrc in a split
+" [E]dit my .[v]imrc in a split.
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 
-" [S]ource my .[v]imrc in a split
+" [S]ource my .[v]imrc in a split.
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
-" Override builtin go-to-definition key
+" Override builtin go-to-definition key.
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 
-" Set the colors initially
+" Set the colors initially.
 call <SID>color_set()
 
-" TODO: Make it so that pasting over a selection doesn't overwrite the paste buffer
 " TODO: Get camel-case text objects, and make "_" count as a word delimiter
 " TODO: Use backspace in normal mode for something
 " TODO: Vertigo.vim?
 " TODO: Make ftplugin for tex that adds "$" as a paired token
 " TODO: Consolidate swap files in one directory
-" TODO: Use as a password manager

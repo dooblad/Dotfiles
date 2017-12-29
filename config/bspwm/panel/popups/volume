@@ -27,7 +27,9 @@ while true; do
 done
 
 amixer sset Master "$CHANGE" &> /dev/null
-VOLUME="$(amixer sget Master "$CHANGE" | grep -o '\([0-9]\)\{1,2\}%' | head -1)"
+VOLUME="$(amixer sget Master "$CHANGE" | egrep -o '\[[0-9]+%\]' | head -1)"
+# Strip off left and right brackets
+VOLUME=${VOLUME:1:${#VOLUME}-2}
 TEXT="Volume: $VOLUME"
 echo "$TEXT"
 

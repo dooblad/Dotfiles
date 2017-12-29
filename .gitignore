@@ -13,6 +13,7 @@ config/gedit
 config/inkscape/
 config/menus/
 config/nvim/plugins
+config/nvim/swap
 config/pulse
 config/ranger
 config/spotify
