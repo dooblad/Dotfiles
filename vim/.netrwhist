@@ -1,5 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/doobs/Dotfiles/config/termite'
-let g:netrw_dirhist_2='/home/doobs/.config'
-let g:netrw_dirhist_3='/home/doobs/.config/termite'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/loganweber/Code/repos/nnvm-relay/tests/python'
+let g:netrw_dirhist_2='/Users/loganweber/Code/repos/nnvm-relay/tests/python/relay'
+let g:netrw_dirhist_3='/Users/loganweber/bin'
+let g:netrw_dirhist_4='/Users/loganweber/.vim'
+let g:netrw_dirhist_5='/Users/loganweber/.vim/bundle'
+let g:netrw_dirhist_6='/Users/loganweber/.vim'
+let g:netrw_dirhist_7='/Users/loganweber/.vim/swap'
+let g:netrw_dirhist_8='/Users/loganweber/.vim'

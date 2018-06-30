@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-CURRENT="$(cat /sys/class/power_supply/BAT0/charge_now)"
-TOTAL="$(cat /sys/class/power_supply/BAT0/charge_full)"
-
-# -Divide to get a ratio and multiply by 100 for a percentage
-# -Round to the nearest integer and add percentage sign
-echo "$CURRENT * 100 / $TOTAL" | bc | xargs printf "%.0f%%\n"

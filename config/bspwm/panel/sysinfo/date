@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-date | awk '{printf "%s %s %s\n", $3, $2, $6}'

@@ -1,2 +1,0 @@
-### Dotfiles ###
-Syncing my shit.

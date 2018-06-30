@@ -1,6 +1,0 @@
-/*
-  Add padding around terminal edges
-*/
-VteTerminal {
-  padding: 10px;
-}

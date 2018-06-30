@@ -1,22 +1,4 @@
-" Space is your leader.
-let mapleader = " "
-" [D]eletes a whole line.
-nnoremap <Leader>d dd
-" [C]hange whole line.
-nnoremap <Leader>c cc
-" Faster [w]riting/saving.
-nnoremap <Leader>w :w<CR>
-" Save and [q]uit.
-nnoremap <Leader>q :wq<CR>
-" Quicker movement.
-nnoremap <Leader>j }
-nnoremap <Leader>k {
-nnoremap <Leader>h ^
-nnoremap <Leader>l $
-
-" Relative numbering and absolute.
+# Guerilla Vim
 set number
 set relativenumber
-
-" Fuck the placement of the escape key.
-inoremap jk <ESC>
+inoremap fd <ESC>
