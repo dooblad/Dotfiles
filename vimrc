@@ -4,7 +4,6 @@
 "    / / / / __ \/ __ \/ __ \/ ___/    | | / / / __ `__ \  "
 "   / /_/ / /_/ / /_/ / /_/ (__  )     | |/ / / / / / / /  "
 "  /_____/\____/\____/_.___/____/      |___/_/_/ /_/ /_/   "
-"                                                          "
 "=========================================================="
 
 " __________ "
@@ -19,6 +18,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/limelight.vim'
+Plugin 'junegunn/goyo.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -28,14 +30,16 @@ filetype plugin indent on
 " | CONFIG | "
 " |‾‾‾‾‾‾‾‾| "
 " ‾‾‾‾‾‾‾‾‾‾ "
-" Add them colors if they got 'em.
-if has('termguicolors')
-    set termguicolors
+" Set syntax highlighting.
+syntax on
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
 endif
 
-set t_Co=256
-set t_ut=
-colorscheme base16-default-dark
+set background=dark
+set termguicolors
 
 " _______________________ "
 " | Trailing Whitespace | "
@@ -71,9 +75,6 @@ set hidden
 " QUIT INSERTING COMMENTS!
 autocmd FileType * silent setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Set syntax highlighting.
-syntax on
-
 " Relative line numbering on the left-hand side and absolute numbering on the
 " current line.
 set relativenumber
@@ -100,6 +101,9 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+" DON'T YOU EVER TELL ME WHERE I CAN AND CAN'T BACKSPACE AGAIN, YA HEAR?
+set backspace=indent,eol,start
+
 " Reload buffer if file has been externally modified.
 set autoread
 
@@ -109,6 +113,15 @@ set directory=$HOME/.vim/swap
 
 " Make the current directory = the current buffer.
 set autochdir
+
+" ____________________ "
+" | Goyo + Limelight | "
+" ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾ "
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+let g:limelight_conceal_ctermfg = 'black'
+let g:limelight_conceal_guifg = '#777777'
 
 " ________________ "
 " |______________| "
@@ -163,6 +176,9 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 
 " [S]ource my .[v]imrc in a split.
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" [F]ocus mode
+nnoremap <Leader>f :Goyo<CR>
 
 " TODO: Get camel-case text objects, and make "_" count as a word delimiter
 " TODO: Use backspace in normal mode for something

@@ -1,0 +1,9 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+[user]
+	name = Doobs Parn
+	email = loganrweber@gmail.com

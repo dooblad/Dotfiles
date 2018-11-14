@@ -1,13 +1,17 @@
-#!/bin/bash
-dir=~/Dotfiles
-backupDir=~/Dotfiles.bak
-files=`ls $dir | grep -v make.sh`
+#!/usr/bin/env bash
 
-echo "Creating $backupDir ..."
-mkdir -p $backupDir
+# Switch to current directory.
+cd "$(dirname "$0")"
 
-echo "Moving existing dotfiles to $backupDir ..."
+dir="$HOME/Dotfiles"
+backup_dir="$HOME/Dotfiles.bak"
+files="gitconfig ideavimrc spacemacs vimrc zshrc"
+
+echo "creating $backup_dir ..."
+mkdir "$backup_dir"
+
+echo "moving existing dotfiles to $backup_dir ..."
 for file in $files; do
-    mv ~/.$file $backupDir
-    ln -s $dir/$file ~/.$file
+    mv "$HOME/.$file" $backup_dir 2> /dev/null
+    ln -s "$dir/$file" "$HOME/.$file"
 done
