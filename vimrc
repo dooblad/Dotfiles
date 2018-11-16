@@ -113,6 +113,15 @@ set directory=$HOME/.vim/swap
 
 " Make the current directory = the current buffer.
 set autochdir
+" _________
+" | netrw | "
+" ‾‾‾‾‾‾‾‾‾
+" Tree Style
+let g:netrw_liststyle = 3
+" Useless banner goodbye
+let g:netrw_banner = 0
+" Make it occupy 25% of the terminal.
+let g:netrw_winsize = 25
 
 " ____________________ "
 " | Goyo + Limelight | "
