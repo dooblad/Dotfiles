@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/bin"
-export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
+source "$HOME/.shell_path"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -63,19 +62,14 @@ ZSH_THEME="doobs"
 plugins=(
   git
   vi-mode
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-alias python='python3'
-alias attu='ssh weberlo@attu.cs.washington.edu'
-alias klaatu='ssh weberlo@klaatu.cs.washington.edu'
-
-# Lemme know before you overwrite a file, k?
-alias mv='mv -i'
-alias cp='cp -i'
+source "$HOME/.shell_aliases"
 
 # Basically, 'inoremap fd <ESC>'
 bindkey -M viins 'fd' vi-cmd-mode
