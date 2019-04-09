@@ -1,0 +1,17 @@
+BACKUP_FILES = [
+    '.base16_theme',
+    '.bash_profile',
+    '.bashrc',
+    '.gitconfig',
+    '.ideavimrc',
+    '.oh-my-zsh/custom/themes',
+    '.shell_aliases',
+    '.shell_path',
+    '.spacemacs',
+    '.ssh/config',
+    '.tmux.conf',
+    '.vimrc',
+    '.vimrc_background',
+    '.zshrc',
+    'bin',
+]
