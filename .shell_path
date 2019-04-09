@@ -1,0 +1,12 @@
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+export PATH="$PATH:$(brew --prefix llvm)/bin"
+
+export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
+
+#export TVM_HOME="$HOME/Code/repo/relay/tvm"
+export TVM_HOME="$HOME/Code/repo/relay/tvm-priv"
+
+export PYTHONPATH="${PYTHONPATH}:$TVM_HOME/python:$TVM_HOME/topi/python:$TVM_HOME/nnvm/python"

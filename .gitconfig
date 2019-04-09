@@ -5,5 +5,5 @@
 	st = status
 	unstage = reset HEAD --
 [user]
-	name = Doobs Parn
-	email = loganrweber@gmail.com
+	name = Logan Weber
+	email = weberlo@cs.uw.edu
