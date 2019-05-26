@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+"$(dirname $0)/unmount-sampa"
+"$(dirname $0)/mount-sampa"

@@ -104,6 +104,10 @@ set shiftwidth=4
 " DON'T YOU EVER TELL ME WHERE I CAN AND CAN'T BACKSPACE AGAIN, YA HEAR?
 set backspace=indent,eol,start
 
+" Include "_" as a word boundary, so we can use `w` to change parts of a
+" variable name (in the relevant languages).
+set iskeyword-=_
+
 " Reload buffer if file has been externally modified.
 set autoread
 
@@ -113,6 +117,7 @@ set directory=$HOME/.vim/swap
 
 " Make the current directory = the current buffer.
 set autochdir
+
 " _________
 " | netrw | "
 " ‾‾‾‾‾‾‾‾‾
