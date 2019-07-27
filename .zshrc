@@ -78,9 +78,11 @@ bindkey -M viins 'fd' vi-cmd-mode
 export LSCOLORS=""
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/base16-shell/profile_helper.sh ] && eval "$($BASE16_SHELL/base16-shell/profile_helper.sh)"
+theme_name=atelier-dune-light
+base16-manager set "$theme_name"
+# Their infra doesn't fucking set the `.vimrc_background` correctly
+sed -i '' "s/base16-/base16-${theme_name}/" ~/.vimrc_background
 
 eval "$(pyenv init -)"

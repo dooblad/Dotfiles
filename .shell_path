@@ -6,8 +6,12 @@ export PATH="$PATH:$(brew --prefix llvm)/bin"
 
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 
-#export TVM_HOME="$HOME/Code/repo/relay/tvm"
+export TVM_HOME="$HOME/Code/repo/tvm/dmlc-tvm"
 #export TVM_HOME="$HOME/Code/repo/relay/tvm-priv"
-export TVM_HOME="$HOME/Code/repo/utvm/tvm-riscv"
+#export TVM_HOME="$HOME/Code/repo/utvm/tvm-riscv"
+export RELAY_AOT_HOME="$HOME/Code/repo/tvm/relay-aot"
 
-export PYTHONPATH="${PYTHONPATH}:$TVM_HOME/python:$TVM_HOME/topi/python:$TVM_HOME/nnvm/python"
+# Add TVM to Python path.
+export PYTHONPATH="$TVM_HOME/python:$TVM_HOME/topi/python:$TVM_HOME/nnvm/python:$TVM_HOME/vta/python:${PYTHONPATH}"
+# Add Relay AoT compiler to Python path.
+export PYTHONPATH="$RELAY_AOT_HOME:${PYTHONPATH}"

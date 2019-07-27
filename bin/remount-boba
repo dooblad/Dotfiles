@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+"$(dirname $0)/unmount-boba"
+"$(dirname $0)/mount-boba"

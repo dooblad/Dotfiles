@@ -7,3 +7,5 @@
 [user]
 	name = Logan Weber
 	email = weberlo@cs.washington.edu
+[push]
+	default = simple
