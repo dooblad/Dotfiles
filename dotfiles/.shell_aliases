@@ -1,0 +1,8 @@
+# Shell-Agnostic Configuration
+
+# Lemme know before you overwrite a file, k?
+alias mv='mv -i'
+alias cp='cp -i'
+
+# open emacs on the target file (and don't wait for me to finish!)
+alias ec='emacsclient -n'

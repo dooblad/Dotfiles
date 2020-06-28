@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-python3 "$(dirname $0)/priv/kill_bg_ssh.py"
-diskutil unmountDisk force boba
-rmdir boba

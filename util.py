@@ -1,10 +1,13 @@
-BACKUP_FILES = [
+FILES_TO_BACKUP = [
     '.base16_theme',
     '.bash_profile',
     '.bashrc',
+    '.config/nvim',
+    '.doom.d',
     '.gitconfig',
     '.ideavimrc',
     '.oh-my-zsh/custom/themes',
+    '.profile',
     '.shell_aliases',
     '.shell_path',
     '.spacemacs',
@@ -13,5 +16,4 @@ BACKUP_FILES = [
     '.vimrc',
     '.vimrc_background',
     '.zshrc',
-    'bin',
 ]

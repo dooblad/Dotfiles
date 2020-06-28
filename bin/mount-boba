@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-python3 "$(dirname $0)/priv/kill_bg_ssh.py"
-ssh -f weberlo@sampa-gw.cs.washington.edu -L 2222:10.77.2.208:22 -N
-sshfs -p 2222 weberlo@localhost:/home/weberlo boba

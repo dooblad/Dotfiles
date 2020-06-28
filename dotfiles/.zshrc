@@ -1,7 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-source "$HOME/.shell_path"
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -69,7 +65,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-source "$HOME/.shell_aliases"
+source "$HOME/.profile"
 
 # Basically, 'inoremap fd <ESC>'
 bindkey -M viins 'fd' vi-cmd-mode
@@ -80,9 +76,17 @@ export LSCOLORS=""
 # Base16 Shell
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/base16-shell/profile_helper.sh ] && eval "$($BASE16_SHELL/base16-shell/profile_helper.sh)"
-theme_name=atelier-dune-light
+
+# set theme
+theme_name=ia-dark
 base16-manager set "$theme_name"
 # Their infra doesn't fucking set the `.vimrc_background` correctly
 sed -i '' "s/base16-/base16-${theme_name}/" ~/.vimrc_background
 
-eval "$(pyenv init -)"
+# opam configuration
+test -r /Users/doobs/.opam/opam-init/init.zsh && . /Users/doobs/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# display a Mac OS system notification with a message and a confirmation button
+function alert {
+    osascript -e "display alert \"$1\""
+}

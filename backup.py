@@ -1,20 +1,24 @@
 from pathlib import Path
 import os
-import subprocess
+import shutil
 
-from util import BACKUP_FILES
+from util import FILES_TO_BACKUP
 
-from_to_files = map(
-    lambda base: (f'{Path.home()}/{base}', f'{Path.home()}/Dotfiles/{base}'),
-    BACKUP_FILES)
+BACKUP_DIR = f'{os.path.dirname(os.path.abspath(__file__))}/dotfiles'
 
-def run_bash(*args, dry_run=False):
-    if dry_run:
-        print(' '.join(args))
+for filename in FILES_TO_BACKUP:
+    src = f'{Path.home()}/{filename}'
+    dst = f'{BACKUP_DIR}/{filename}'
+    dst_dir = os.path.dirname(dst)
+    if os.path.exists(src):
+        if not os.path.exists(dst_dir):
+            os.makedirs(dst_dir)
+
+        if os.path.isfile(src):
+            shutil.copy(src, dst)
+        elif os.path.isdir(src):
+            shutil.copytree(src, dst)
+        else:
+            raise RuntimeError('well then what the fuck is it?')
     else:
-        subprocess.Popen(args)
-
-for from_file, to_file in from_to_files:
-    if os.path.isdir(from_file):
-        run_bash('rm', '-r', to_file)
-    run_bash('cp', '-r', from_file, to_file)
+        print(f'warning: no such file `{src}` to back up')

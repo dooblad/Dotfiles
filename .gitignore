@@ -1,4 +1,5 @@
-vim/.netrwhist
-vim/bundle
-vim/swap
+*.log
+.DS_Store
+.idea
 __pycache__/
+tmp/
